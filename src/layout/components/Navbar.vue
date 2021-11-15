@@ -13,16 +13,10 @@
           <router-link to="/">
             <el-dropdown-item> Home </el-dropdown-item>
           </router-link>
-          <a
-            target="_blank"
-            href="https://github.com/PanJiaChen/vue-admin-template/"
-          >
+          <a target="_blank" href="">
             <el-dropdown-item>Github</el-dropdown-item>
           </a>
-          <a
-            target="_blank"
-            href="https://panjiachen.github.io/vue-element-admin-site/#/"
-          >
+          <a target="_blank" href="">
             <el-dropdown-item>Docs</el-dropdown-item>
           </a>
           <el-dropdown-item divided @click.native="logout">
@@ -70,7 +64,7 @@ export default {
     transition: background 0.3s;
     // 给所有元素设置禁止点击按钮或链接的高亮背景
     -webkit-tap-highlight-color: transparent;
-    border: 2px solid yellow;
+    // border: 2px solid yellow;
 
     &:hover {
       background: rgba(0, 0, 0, 0.025);
@@ -85,7 +79,7 @@ export default {
     float: right;
     height: 100%;
     line-height: 50px;
-    border: 2px solid red;
+    // border: 2px solid red;
     &:focus {
       outline: none;
     }
@@ -110,7 +104,7 @@ export default {
 
     .avatar-container {
       margin-right: 30px;
-      border: 2px solid #000;
+      // border: 2px solid #000;
       .avatar-wrapper {
         margin-top: 5px;
         position: relative;

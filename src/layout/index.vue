@@ -35,7 +35,7 @@ export default {
     height: 100vh;
     // min-height: 100%;
     float: left;
-    background: #000;
+    background: rgb(168, 160, 160);
     // border: 2px solid black;
   }
   .main-container {
