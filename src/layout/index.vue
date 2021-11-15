@@ -44,10 +44,10 @@ export default {
     float: left;
     background: red;
     // border: 2px solid red;
-    .navbar-container {
-      height: 50px;
-      background: yellow;
-    }
+    // .navbar-container {
+    //   height: 50px;
+    //   background: yellow;
+    // }
   }
 }
 </style>
