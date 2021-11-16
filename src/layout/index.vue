@@ -1,6 +1,6 @@
 <template>
   <div class="app-wrapper">
-    <Sidebar class="siderbar-container"></Sidebar>
+    <Sidebar class="sidebar-container"></Sidebar>
     <div class="main-container">
       <div class="navbar-container"><Navbar></Navbar></div>
 
@@ -9,7 +9,7 @@
   </div>
 </template>
 <script>
-import Sidebar from "./components/Siderbar/Sidebar.vue";
+import Sidebar from "./components/Sidebar/Sidebar.vue";
 import Navbar from "./components/Navbar.vue";
 import AppMain from "./components/Appmain.vue";
 
@@ -30,24 +30,17 @@ export default {
   position: relative;
   height: 100%;
   width: 100%;
-  .siderbar-container {
+  .sidebar-container {
     width: 200px;
     height: 100vh;
-    // min-height: 100%;
     float: left;
     background: rgb(48, 65, 86);
-    // border: 2px solid black;
   }
   .main-container {
     width: calc(100% - 200px);
     height: 100vh;
     float: left;
     background: rgb(88, 88, 88);
-    // border: 2px solid red;
-    // .navbar-container {
-    //   height: 50px;
-    //   background: yellow;
-    // }
   }
 }
 </style>
