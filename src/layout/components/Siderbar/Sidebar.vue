@@ -10,18 +10,23 @@
       mode="vertical"
       router
     >
-      <SidebarItem></SidebarItem>
+      <!-- <SiderItem ></SiderItem> -->
+      <SidebarItem :list="$router.options.routes"></SidebarItem>
     </el-menu>
   </div>
   <!-- <div>dd</div> -->
 </template>
 <script>
-import SidebarItem from "./SiderItem.vue";
+// import SiderItem from "./SiderItem.vue";
+import SidebarItem from "./SidebarItem.vue";
 import variables from "@/styles/variables.scss";
 
 export default {
   name: "Sidebar",
-  components: { SidebarItem },
+  components: {
+    // SiderItem,
+    SidebarItem,
+  },
   computed: {
     variables() {
       return variables;
@@ -29,3 +34,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.el-menu {
+  border-right: none;
+}
+</style>

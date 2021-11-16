@@ -35,14 +35,14 @@ export default {
     height: 100vh;
     // min-height: 100%;
     float: left;
-    background: rgb(168, 160, 160);
+    background: rgb(48, 65, 86);
     // border: 2px solid black;
   }
   .main-container {
     width: calc(100% - 200px);
     height: 100vh;
     float: left;
-    background: red;
+    background: rgb(88, 88, 88);
     // border: 2px solid red;
     // .navbar-container {
     //   height: 50px;

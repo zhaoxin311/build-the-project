@@ -33,7 +33,6 @@ const routes = [
   {
     path: "/login",
     component: () => import("../views/login/index.vue"),
-    name: "login",
     hidden: true,
   },
 
@@ -44,114 +43,100 @@ const routes = [
   },
   {
     path: "/",
-    name: "Home",
+    name: "系统首页",
     component: Layout,
+    icon: "el-icon-s-home",
   },
   {
-    path: "/about",
-    name: "About",
+    path: "/yezhuguanli",
+    name: "业主管理",
+    icon: "el-icon-s-custom",
     component: Layout,
-    // component: () => import("../views/About.vue"),
+    hidden: true,
     children: [
       {
-        path: "index",
-        name: "Form",
-        component: () => import("../views/About.vue"),
-        meta: { title: "Form", icon: "form" },
+        path: "/yezhuguanli",
+        component: () => import("../views/owner/index.vue"),
       },
     ],
   },
 
   {
-    path: "/menu1",
+    path: "/xinwenzixun",
     component: Layout,
-    name: "menu1",
-    meta: {
-      title: "menu1",
-      icon: "menu1",
-    },
+    name: "新闻资讯",
+    icon: "el-icon-s-management",
+    hidden: true,
     children: [
       {
-        path: "menu1-1",
-        component: () => import("../views/menu1/menu1-1/index.vue"),
-        name: "menu1-1",
-        meta: { title: "menu1-1" },
+        path: "/xinwenzixun/menu1-1",
+        component: () => import("../views/news/menu1-1/index.vue"),
+        name: "新闻资讯-1",
+        icon: "el-icon-s-management",
       },
+      // {
+      //   path: "/xinwenzixun/menu1-2",
+      //   component: () => import("../views/news/menu1-2/index.vue"),
+      //   name: "新闻资讯-2",
+      //   icon: "el-icon-s-management",
+
+      //   children: [],
+      // },
+    ],
+  },
+  {
+    path: "/shoucangguanli",
+    name: "收藏管理",
+    icon: "el-icon-star-on",
+    component: Layout,
+    children: [
       {
-        path: "menu1-2",
-        component: () => import("../views/menu1/menu1-2/index.vue"),
-        name: "menu1-2",
-        meta: { title: "menu1-2" },
-        children: [
-          {
-            path: "menu1-2-1",
-            component: () => import("../views/menu1/menu1-1/index.vue"),
-            name: "menu1-2-1",
-            meta: { title: "menu1-2-1" },
-          },
-          {
-            path: "menu1-2-2",
-            component: () => import("../views/menu1/menu1-2/index.vue"),
-            name: "menu1-2-2",
-            meta: { title: "menu1-2-2" },
-          },
-        ],
+        path: "/shoucangguanli",
+        component: () => import("../views/like/index.vue"),
       },
     ],
   },
   {
-    path: "/menu2",
+    path: "/liebiaoguanli",
+    name: "列表管理",
+    icon: "el-icon-s-operation",
     component: Layout,
-    name: "menu2",
-    meta: {
-      title: "menu2",
-      icon: "menu2",
-    },
     children: [
       {
-        path: "menu2-1",
-        component: () => import("../views/menu2/menu2-1/index.vue"),
-        name: "menu2-1",
-        meta: { title: "menu2-1" },
-      },
-      {
-        path: "menu2-2",
-        component: () => import("../views/menu2/menu2-2/index.vue"),
-        name: "menu2-2",
-        meta: { title: "menu2-2" },
+        path: "/liebiaoguanli",
+        component: () => import("../views/list/index.vue"),
       },
     ],
   },
   {
-    path: "/menu3",
+    path: "/gedanguanli",
+    name: "歌单管理",
+    icon: "el-icon-message-solid",
     component: Layout,
-    name: "menu3",
     children: [
       {
-        path: "menu3-1",
-        component: () => import("../views/menu3/menu3-1/index.vue"),
-        name: "menu3-1",
-        meta: { title: "menu3-1", icon: "icon" },
+        path: "/gedangguanli",
+        component: () => import("../views/music/index.vue"),
       },
     ],
   },
+  // {
+  //   path: "/",
+  //   name: "",
+  //   icon: "",
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: "/",
+  //       component: () => import(""),
+  //     },
+  //   ],
+  // },
 
   // 404 page must be placed at the end !!!
   { path: "*", redirect: "/404", hidden: true },
 ];
 
-// const roleType = store.getters.user_role;
-
-// function permissionRouter(router = routes1) {
-//   return router.filter((item) => {
-//     if (item.children) item.children = permissionRouter(item.children);
-//     return item.meta.permission.includes(roleType);
-//   });
-// }
-// export const routes = permissionRouter(); // 根据这个路由去生成侧边栏
-// export default new VueRouter({
-//   routes,
-// });
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
