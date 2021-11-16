@@ -23,7 +23,7 @@
           <i :class="item.icon"></i>
           <span>{{ item.name }}</span>
         </template>
-        <SidebarItem :list="item.children"></SidebarItem>
+        <SidebarItem :list="item.children" class="item2color"></SidebarItem>
       </el-submenu>
     </div>
   </div>

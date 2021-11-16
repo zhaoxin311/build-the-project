@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
     <hamburger class="hamburger-container" @toggleClick="toggleSideBar" />
-
+    <Breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
@@ -30,12 +30,14 @@
 
 <script>
 import Hamburger from "@/components/Hamburger";
+import Breadcrumb from "@/components/Breadcrumb";
 export default {
   data() {
     return {};
   },
   components: {
     Hamburger,
+    Breadcrumb,
   },
   methods: {
     toggleSideBar() {

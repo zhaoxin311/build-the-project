@@ -51,6 +51,7 @@ const routes = [
     path: "/yezhuguanli",
     name: "业主管理",
     icon: "el-icon-s-custom",
+    redirect: "/yezhuguanli",
     component: Layout,
     hidden: true,
     children: [
@@ -65,23 +66,24 @@ const routes = [
     path: "/xinwenzixun",
     component: Layout,
     name: "新闻资讯",
+    redirect: "noRedirect",
     icon: "el-icon-s-management",
-    hidden: true,
+    // hidden: true,
     children: [
       {
         path: "/xinwenzixun/menu1-1",
         component: () => import("../views/news/menu1-1/index.vue"),
         name: "新闻资讯-1",
-        icon: "el-icon-s-management",
+        // icon: "el-icon-s-management",
       },
-      // {
-      //   path: "/xinwenzixun/menu1-2",
-      //   component: () => import("../views/news/menu1-2/index.vue"),
-      //   name: "新闻资讯-2",
-      //   icon: "el-icon-s-management",
+      {
+        path: "/xinwenzixun/menu1-2",
+        component: () => import("../views/news/menu1-2/index.vue"),
+        name: "新闻资讯-2",
+        // icon: "el-icon-s-management",
 
-      //   children: [],
-      // },
+        children: [],
+      },
     ],
   },
   {
