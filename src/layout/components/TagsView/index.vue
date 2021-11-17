@@ -21,6 +21,7 @@ export default {
         { name: "tag4", path: "/liebiaoguanli" },
         { name: "tag5", path: "/liebiaoguanli" },
         { name: "tag6", path: "/liebiaoguanli" },
+        { name: "tag6", path: "/liebiaoguanli" },
       ],
     };
   },
