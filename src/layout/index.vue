@@ -3,6 +3,7 @@
     <Sidebar class="sidebar-container" />
     <div class="main-container">
       <div class="navbar-container"><Navbar /></div>
+      <div class="tags-view-container"><TagsView /></div>
       <app-main></app-main>
     </div>
   </div>
@@ -11,6 +12,7 @@
 import Sidebar from "./components/Sidebar/Sidebar.vue";
 import Navbar from "./components/Navbar.vue";
 import AppMain from "./components/Appmain.vue";
+import TagsView from "./components/TagsView/index.vue";
 
 export default {
   name: "Layout",
@@ -18,6 +20,7 @@ export default {
     Navbar,
     Sidebar,
     AppMain,
+    TagsView,
   },
   data() {
     return {};
@@ -40,6 +43,10 @@ export default {
     height: 100vh;
     float: left;
     background: rgb(88, 88, 88);
+    .tags-view-container {
+      height: 30px;
+      background: #fff;
+    }
   }
 }
 </style>
