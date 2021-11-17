@@ -117,7 +117,7 @@ const routes = [
     component: Layout,
     children: [
       {
-        path: "/gedangguanli",
+        path: "/gedanguanli",
         component: () => import("../views/music/index.vue"),
       },
     ],

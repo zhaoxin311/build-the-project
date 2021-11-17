@@ -1,9 +1,8 @@
 <template>
   <div class="app-wrapper">
-    <Sidebar class="sidebar-container"></Sidebar>
+    <Sidebar class="sidebar-container" />
     <div class="main-container">
-      <div class="navbar-container"><Navbar></Navbar></div>
-
+      <div class="navbar-container"><Navbar /></div>
       <app-main></app-main>
     </div>
   </div>
