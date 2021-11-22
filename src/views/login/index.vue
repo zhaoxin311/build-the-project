@@ -2,39 +2,91 @@
   <div>
     <div class="app">
       <div class="content">
-        <div class="content_input">
+        <el-form class="content_input" :model="loginForm" :rules="loginRules">
           <div class="title">
             <p>管理员登录</p>
           </div>
-          <el-input
-            v-model="userName"
-            clearable
-            placeholder="用户名"
-          ></el-input>
-          <el-input
-            v-model="passWord"
-            clearable
-            show-password
-            placeholder="密码"
-          ></el-input>
+          <el-form-item prop="username">
+            <el-input
+              v-model="loginForm.userName"
+              clearable
+              placeholder="用户名"
+            ></el-input>
+          </el-form-item>
+          <el-form-item prop="password">
+            <el-input
+              v-model="loginForm.passWord"
+              clearable
+              show-password
+              placeholder="密码"
+            ></el-input>
+          </el-form-item>
+
           <div class="content_button">
             <el-button type="primary" @click="SignIn">登录</el-button>
           </div>
-        </div>
+        </el-form>
       </div>
     </div>
   </div>
 </template>
 <script>
+import { validUsername } from "@/utils/validate";
 export default {
   data() {
+    const validateUsername = (rule, value, callback) => {
+      if (!validUsername(value)) {
+        callback(new Error("Please enter the correct user name"));
+      } else {
+        callback();
+      }
+    };
+    const validatePassword = (rule, value, callback) => {
+      if (value.length < 6) {
+        callback(new Error("The password can not be less than 6 digits"));
+      } else {
+        callback();
+      }
+    };
     return {
-      userName: "",
-      passWord: "",
+      loginForm: {
+        userName: "admin",
+        passWord: "111111",
+      },
+      loginRules: {
+        userName: [
+          { required: true, trigger: "blur", validator: validateUsername },
+        ],
+        passWord: [
+          { required: true, trigger: "blur", validator: validatePassword },
+        ],
+      },
     };
   },
+  // watch: {
+  //   $route: {
+  //     handler: function (route) {
+  //       this.redirect = route.query && route.query.redirect;
+  //     },
+  //     immediate: true,
+  //   },
+  // },
   methods: {
-    SignIn() {},
+    SignIn() {
+      // this.$refs.loginForm.validate((valid) => {
+      //   if (valid) {
+      //     this.$store
+      //       .dispatch("/login", this.loginForm)
+      //       .then(() => {
+      //         this.$router.push({ path: this.redirect || "/" });
+      //       })
+      //       .catch(() => {});
+      //   } else {
+      console.log("error submit!!");
+      //     return false;
+      //   }
+      // });
+    },
   },
 };
 </script>

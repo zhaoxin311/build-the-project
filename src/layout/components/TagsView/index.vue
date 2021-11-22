@@ -6,6 +6,12 @@
       :key="tag.path"
       :to="tag.path"
     >
+      <!-- <el-tag
+        :closable="true"
+        :class="isActive(tag.path) ? 'active' : ''"
+        @click.prevent="colseViewTabs(tag, $event)"
+      >
+      </el-tag> -->
       {{ tag.name }}
     </router-link>
   </div>
