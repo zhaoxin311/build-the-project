@@ -2,18 +2,23 @@
   <div>
     <div class="app">
       <div class="content">
-        <el-form class="content_input" :model="loginForm" :rules="loginRules">
+        <el-form
+          class="content_input"
+          ref="loginForm"
+          :model="loginForm"
+          :rules="loginRules"
+        >
           <div class="title">
             <p>管理员登录</p>
           </div>
-          <el-form-item prop="username">
+          <el-form-item prop="userName">
             <el-input
               v-model="loginForm.userName"
               clearable
               placeholder="用户名"
             ></el-input>
           </el-form-item>
-          <el-form-item prop="password">
+          <el-form-item prop="passWord">
             <el-input
               v-model="loginForm.passWord"
               clearable
@@ -23,7 +28,16 @@
           </el-form-item>
 
           <div class="content_button">
-            <el-button type="primary" @click="SignIn">登录</el-button>
+            <el-button type="primary" @click="submitForm('loginForm')"
+              >登录</el-button
+            >
+            <el-button type="success" @click="resetForm('loginForm')"
+              >重置</el-button
+            >
+          </div>
+          <div class="tips">
+            <span style="margin-right: 20px">username: admin</span>
+            <span> password: any</span>
           </div>
         </el-form>
       </div>
@@ -72,26 +86,40 @@ export default {
   //   },
   // },
   methods: {
-    SignIn() {
-      // this.$refs.loginForm.validate((valid) => {
-      //   if (valid) {
-      //     this.$store
-      //       .dispatch("/login", this.loginForm)
-      //       .then(() => {
-      //         this.$router.push({ path: this.redirect || "/" });
-      //       })
-      //       .catch(() => {});
-      //   } else {
-      console.log("error submit!!");
-      //     return false;
-      //   }
-      // });
+    submitForm(formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          this.$router.push({ path: this.redirect || "/" });
+        } else {
+          console.log("error submit!!");
+          return false;
+        }
+      });
     },
+    resetForm(formName) {
+      this.$refs[formName].resetFields();
+    },
+
+    // SignIn() {
+    //   // this.$refs.loginForm.validate((valid) => {
+    //   //   if (valid) {
+    //   //     this.$store
+    //   //       .dispatch("/login", this.loginForm)
+    //   //       .then(() => {
+    //   //         this.$router.push({ path: this.redirect || "/" });
+    //   //       })
+    //   //       .catch(() => {});
+    //   //   } else {
+    //   console.log("error submit!!");
+    //   //     return false;
+    //   //   }
+    //   // });
+    // },
   },
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .app {
   width: 100vw;
   height: 100vh;
@@ -99,7 +127,7 @@ export default {
 }
 .content {
   width: 500px;
-  height: 300px;
+  height: 400px;
   box-sizing: border-box;
   padding: 0 50px;
   border-radius: 5px;
@@ -122,11 +150,13 @@ export default {
 }
 
 .content_button {
-  margin-top: 10px;
+  text-align: center;
+  margin-top: 40px;
 }
 
 .el-input {
-  margin-bottom: 25px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .title {
@@ -137,7 +167,19 @@ export default {
   color: #606266;
 }
 
-.el-button--primary {
-  width: 100%;
+.el-button--primary,
+.el-button--success {
+  width: 40%;
+}
+.tips {
+  font-size: 14px;
+  color: rgb(197, 185, 185);
+  margin-bottom: 10px;
+
+  span {
+    &:first-of-type {
+      margin-right: 16px;
+    }
+  }
 }
 </style>
