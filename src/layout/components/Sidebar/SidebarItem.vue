@@ -11,7 +11,7 @@
         :index="item.path"
       >
         <i :class="item.icon"></i>
-        <span>{{ item.name }}</span>
+        <span slot="title">{{ item.name }}</span>
       </el-menu-item>
       <el-submenu
         v-if="

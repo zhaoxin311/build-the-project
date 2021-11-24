@@ -33,7 +33,7 @@ export default {
   height: 100%;
   width: 100%;
   .sidebar-container {
-    width: 200px;
+    // width: 200px;
     height: 100vh;
     float: left;
     background: rgb(48, 65, 86);

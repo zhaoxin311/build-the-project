@@ -26,6 +26,18 @@
               placeholder="密码"
             ></el-input>
           </el-form-item>
+          <el-form-item prop="code">
+            <el-input
+              v-model="loginForm.code"
+              clearable
+              placeholder="验证码"
+              style="width: 180px"
+            ></el-input>
+            <a><img :src="codeUrl" @click="getCode" alt="" /></a>
+          </el-form-item>
+          <!-- <el-form-item>
+            <el-checkbox label="记住我" class="rememberMe"></el-checkbox>
+          </el-form-item> -->
 
           <div class="content_button">
             <el-button type="primary" @click="submitForm('loginForm')"
@@ -46,6 +58,7 @@
 </template>
 <script>
 import { validUsername } from "@/utils/validate";
+import { getCodeImg } from "@/api/login/login.js";
 export default {
   data() {
     const validateUsername = (rule, value, callback) => {
@@ -63,9 +76,14 @@ export default {
       }
     };
     return {
+      codeUrl: "",
+      loginForms: {
+        uuid: "",
+      },
       loginForm: {
         userName: "admin",
         passWord: "111111",
+        code: "",
       },
       loginRules: {
         userName: [
@@ -85,6 +103,9 @@ export default {
   //     immediate: true,
   //   },
   // },
+  created() {
+    this.getCode();
+  },
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
@@ -100,21 +121,12 @@ export default {
       this.$refs[formName].resetFields();
     },
 
-    // SignIn() {
-    //   // this.$refs.loginForm.validate((valid) => {
-    //   //   if (valid) {
-    //   //     this.$store
-    //   //       .dispatch("/login", this.loginForm)
-    //   //       .then(() => {
-    //   //         this.$router.push({ path: this.redirect || "/" });
-    //   //       })
-    //   //       .catch(() => {});
-    //   //   } else {
-    //   console.log("error submit!!");
-    //   //     return false;
-    //   //   }
-    //   // });
-    // },
+    //获取验证码
+    getCode() {
+      getCodeImg().then((res) => {
+        console.log(res);
+      });
+    },
   },
 };
 </script>
@@ -181,5 +193,15 @@ export default {
       margin-right: 16px;
     }
   }
+}
+img {
+  width: 100px;
+  height: 28px;
+  margin-left: 10px;
+  vertical-align: middle;
+  border-radius: 3px;
+}
+.rememberMe {
+  color: #fff;
 }
 </style>
