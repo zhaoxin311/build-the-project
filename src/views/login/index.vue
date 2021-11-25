@@ -75,16 +75,16 @@ export default {
     };
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
-        callback(new Error("The password can not be less than 6 digits"));
+        callback(new Error("The password can not be less than 6 digits!!"));
       } else {
         callback();
       }
     };
     const validateCode = (rule, value, callback) => {
       if (value.length < 4) {
-        callback(new Error("The validcode can not be less than 4 digits"));
+        callback(new Error("The validcode can not be less than 4 digits!!"));
       } else if (value != this.validCode) {
-        callback(new Error("The validcode not right"));
+        callback(new Error("There is an error in the verification code!!"));
       } else {
         callback();
       }

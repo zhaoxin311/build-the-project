@@ -45,8 +45,8 @@ export default {
     createdCode() {
       const len = this.length;
       const codeList = [];
-      const chars = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz0123456789";
-      const charsLen = chars.length;
+      // const chars = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz0123456789";
+      // const charsLen = chars.length;
       // 生成
       for (let i = 0; i < len; i++) {
         const rgb = [
@@ -55,7 +55,8 @@ export default {
           Math.round(Math.random() * 200),
         ];
         codeList.push({
-          code: chars.charAt(Math.floor(Math.random() * charsLen)),
+          // code: chars.charAt(Math.floor(Math.random() * charsLen)),
+          code: Math.random().toString(36).substr(2, 1), //
           color: `rgb(${rgb})`,
           fontSize: `1${[Math.floor(Math.random() * 10)]}px`,
           padding: `${[Math.floor(Math.random() * 10)]}px`,
