@@ -46,6 +46,12 @@ const routes = [
     name: "系统首页",
     component: Layout,
     icon: "el-icon-s-home",
+    children: [
+      {
+        path: "/home",
+        component: () => import("../views/Home.vue"),
+      },
+    ],
   },
   {
     path: "/yezhuguanli",
@@ -66,7 +72,7 @@ const routes = [
     path: "/xinwenzixun",
     component: Layout,
     name: "新闻资讯",
-    redirect: "noRedirect",
+    redirect: "/xinwenzixun/menu1-1",
     icon: "el-icon-s-management",
     // hidden: true,
     children: [

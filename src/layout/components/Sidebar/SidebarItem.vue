@@ -31,6 +31,7 @@
   </div>
 </template>
 <script>
+import listData from "./router";
 export default {
   name: "SidebarItem",
   props: {
@@ -41,8 +42,13 @@ export default {
       type: Array,
     },
   },
+  created() {
+    // console.log(this.listData, "data");
+  },
   data() {
-    return {};
+    return {
+      listData: listData,
+    };
   },
 };
 </script>

@@ -53,7 +53,7 @@ export default {
   height: 50px;
   overflow: hidden;
   position: relative;
-  background: #fff;
+  background: #eff0f5;
   // 阴影水平 垂直 偏移，阴影模糊值。R B G 透明度
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
 
