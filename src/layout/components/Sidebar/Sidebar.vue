@@ -37,11 +37,15 @@ export default {
       return variables;
     },
   },
+  created() {
+    console.log(this.$router.options.routes);
+  },
   data() {
     return {
-      isCollapse: true,
+      isCollapse: false,
     };
   },
+
   methods: {
     handleOpen(key, keyPath) {
       console.log(key, keyPath);

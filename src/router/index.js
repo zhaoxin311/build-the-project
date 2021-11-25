@@ -81,8 +81,6 @@ const routes = [
         component: () => import("../views/news/menu1-2/index.vue"),
         name: "新闻资讯-2",
         // icon: "el-icon-s-management",
-
-        children: [],
       },
     ],
   },

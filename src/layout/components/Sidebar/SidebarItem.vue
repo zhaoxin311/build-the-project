@@ -6,7 +6,7 @@
           item.hidden != true &&
           (item.children == null ||
             item.children.length < 2 ||
-            item.path === '/')
+            item.path === '/home')
         "
         :index="item.path"
       >
@@ -15,7 +15,9 @@
       </el-menu-item>
       <el-submenu
         v-if="
-          item.children != null && item.children.length > 1 && item.path !== '/'
+          item.children != null &&
+          item.children.length > 1 &&
+          item.path !== '/home'
         "
         :index="item.path"
       >
