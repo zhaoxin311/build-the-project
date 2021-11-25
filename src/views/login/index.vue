@@ -33,7 +33,11 @@
               placeholder="验证码"
               style="width: 180px"
             ></el-input>
-            <a><img :src="codeUrl" @click="getCode" alt="" /></a>
+            <valid-code
+              :value.sync="validCode"
+              class="validcode"
+              style="width: 100px; height: 28px"
+            />
           </el-form-item>
           <!-- <el-form-item>
             <el-checkbox label="记住我" class="rememberMe"></el-checkbox>
@@ -58,8 +62,9 @@
 </template>
 <script>
 import { validUsername } from "@/utils/validate";
-import { getCodeImg } from "@/api/login/login.js";
+import validCode from "@/components/Code/validCode.vue";
 export default {
+  components: { validCode },
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
@@ -75,11 +80,17 @@ export default {
         callback();
       }
     };
+    const validateCode = (rule, value, callback) => {
+      if (value.length < 4) {
+        callback(new Error("The validcode can not be less than 4 digits"));
+      } else if (value != this.validCode) {
+        callback(new Error("The validcode not right"));
+      } else {
+        callback();
+      }
+    };
     return {
-      codeUrl: "",
-      loginForms: {
-        uuid: "",
-      },
+      validCode: "",
       loginForm: {
         userName: "admin",
         passWord: "111111",
@@ -92,25 +103,16 @@ export default {
         passWord: [
           { required: true, trigger: "blur", validator: validatePassword },
         ],
+        code: [{ required: true, trigger: "blur", validator: validateCode }],
       },
     };
   },
-  // watch: {
-  //   $route: {
-  //     handler: function (route) {
-  //       this.redirect = route.query && route.query.redirect;
-  //     },
-  //     immediate: true,
-  //   },
-  // },
-  created() {
-    this.getCode();
-  },
+  created() {},
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$router.push({ path: this.redirect || "/" });
+          this.$router.push({ path: this.redirect || "/home" });
         } else {
           console.log("error submit!!");
           return false;
@@ -119,13 +121,6 @@ export default {
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
-    },
-
-    //获取验证码
-    getCode() {
-      getCodeImg().then((res) => {
-        console.log(res);
-      });
     },
   },
 };
@@ -194,14 +189,12 @@ export default {
     }
   }
 }
-img {
-  width: 100px;
-  height: 28px;
-  margin-left: 10px;
+
+.validcode {
+  margin-top: 15px;
   vertical-align: middle;
   border-radius: 3px;
-}
-.rememberMe {
-  color: #fff;
+  float: right;
+  border: 1px solid red;
 }
 </style>

@@ -31,7 +31,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/login",
+    path: "/",
     component: () => import("../views/login/index.vue"),
     hidden: true,
   },
@@ -42,7 +42,7 @@ const routes = [
     hidden: true,
   },
   {
-    path: "/",
+    path: "/home",
     name: "系统首页",
     component: Layout,
     icon: "el-icon-s-home",
