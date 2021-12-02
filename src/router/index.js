@@ -29,103 +29,106 @@ Vue.use(VueRouter);
 //   ],
 // },
 
-const routes = [
+export const constantRoutes = [
   {
-    path: "/",
-    component: () => import("../views/login/index.vue"),
+    path: "/login",
+    component: () => import("@/views/login/index.vue"),
     hidden: true,
   },
 
   {
     path: "/404",
-    component: () => import("../views/404.vue"),
+    component: () => import("@/views/404.vue"),
     hidden: true,
   },
   {
-    path: "/home",
-    name: "系统首页",
+    path: "/",
     component: Layout,
-    icon: "el-icon-s-home",
-    children: [
-      {
-        path: "/home",
-        component: () => import("../views/Home.vue"),
-      },
-    ],
-  },
-  {
-    path: "/yezhuguanli",
-    name: "业主管理",
-    icon: "el-icon-s-custom",
-    redirect: "/yezhuguanli",
-    component: Layout,
-    hidden: true,
-    children: [
-      {
-        path: "/yezhuguanli",
-        component: () => import("../views/owner/index.vue"),
-      },
-    ],
-  },
+    redirect: "/home",
 
-  {
-    path: "/xinwenzixun",
-    component: Layout,
-    name: "新闻资讯",
-    redirect: "/xinwenzixun/menu1-1",
-    icon: "el-icon-s-management",
-    // hidden: true,
     children: [
       {
-        path: "/xinwenzixun/menu1-1",
-        component: () => import("../views/news/menu1-1/index.vue"),
-        name: "新闻资讯-1",
-        // icon: "el-icon-s-management",
-      },
-      {
-        path: "/xinwenzixun/menu1-2",
-        component: () => import("../views/news/menu1-2/index.vue"),
-        name: "新闻资讯-2",
-        // icon: "el-icon-s-management",
+        path: "home",
+        name: "Home",
+        component: () => import("@/views/Home.vue"),
+        meta: { title: "首页", icon: "el-icon-s-home", affix: true },
       },
     ],
   },
-  {
-    path: "/shoucangguanli",
-    name: "收藏管理",
-    icon: "el-icon-star-on",
-    component: Layout,
-    children: [
-      {
-        path: "/shoucangguanli",
-        component: () => import("../views/like/index.vue"),
-      },
-    ],
-  },
-  {
-    path: "/liebiaoguanli",
-    name: "列表管理",
-    icon: "el-icon-s-operation",
-    component: Layout,
-    children: [
-      {
-        path: "/liebiaoguanli",
-        component: () => import("../views/list/index.vue"),
-      },
-    ],
-  },
-  {
-    path: "/gedanguanli",
-    name: "歌单管理",
-    icon: "el-icon-message-solid",
-    component: Layout,
-    children: [
-      {
-        path: "/gedanguanli",
-        component: () => import("../views/music/index.vue"),
-      },
-    ],
-  },
+  // {
+  //   path: "/yezhuguanli",
+  //   name: "业主管理",
+  //   icon: "el-icon-s-custom",
+  //   redirect: "/yezhuguanli",
+  //   component: Layout,
+  //   hidden: true,
+  //   children: [
+  //     {
+  //       path: "/yezhuguanli",
+  //       component: () => import("../views/owner/index.vue"),
+  //     },
+  //   ],
+  // },
+
+  // {
+  //   path: "/xinwenzixun",
+  //   component: Layout,
+  //   name: "新闻资讯",
+  //   redirect: "/xinwenzixun/menu1-1",
+  //   icon: "el-icon-s-management",
+  //   // hidden: true,
+  //   children: [
+  //     {
+  //       path: "/xinwenzixun/menu1-1",
+  //       component: () => import("../views/news/menu1-1/index.vue"),
+  //       name: "新闻资讯-1",
+  //       // icon: "el-icon-s-management",
+  //     },
+  //     {
+  //       path: "/xinwenzixun/menu1-2",
+  //       component: () => import("../views/news/menu1-2/index.vue"),
+  //       name: "新闻资讯-2",
+  //       // icon: "el-icon-s-management",
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: "/shoucangguanli",
+  //   name: "收藏管理",
+  //   icon: "el-icon-star-on",
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: "/shoucangguanli",
+  //       component: () => import("../views/like/index.vue"),
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: "/liebiaoguanli",
+  //   name: "列表管理",
+  //   icon: "el-icon-s-operation",
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: "/liebiaoguanli",
+  //       component: () => import("../views/list/index.vue"),
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: "/gedanguanli",
+  //   name: "歌单管理",
+  //   icon: "el-icon-message-solid",
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: "/gedanguanli",
+  //       component: () => import("../views/music/index.vue"),
+  //     },
+  //   ],
+  // },
+
   // {
   //   path: "/",
   //   name: "",
@@ -140,13 +143,22 @@ const routes = [
   // },
 
   // 404 page must be placed at the end !!!
-  { path: "*", redirect: "/404", hidden: true },
+  // { path: "*", redirect: "/404", hidden: true },
 ];
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes,
-});
+const createRouter = () =>
+  new VueRouter({
+    // mode: "history",
+    // base: process.env.BASE_URL,
+    scrollBehavior: () => ({ y: 0 }),
+    routes: constantRoutes,
+  });
+
+const router = createRouter();
+
+export function resetRouter() {
+  const newRouter = createRouter();
+  router.matcher = newRouter.matcher;
+}
 
 export default router;
