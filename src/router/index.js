@@ -45,7 +45,8 @@ export const constantRoutes = [
     path: "/",
     component: Layout,
     redirect: "/home",
-
+    icon: "el-icon-s-home",
+    name: "系统首页",
     children: [
       {
         path: "home",
