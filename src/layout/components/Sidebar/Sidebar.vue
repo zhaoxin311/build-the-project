@@ -4,6 +4,7 @@
       <el-radio-button :label="false">展开</el-radio-button>
       <el-radio-button :label="true">收起</el-radio-button>
     </el-radio-group> -->
+    <logo v-if="showLogo" :collapse="isCollapse" />
     <el-menu
       class="el-menu-vertical-demo"
       :default-active="$route.path"
@@ -26,15 +27,25 @@
 // import { mapGetters } from "vuex";
 import SidebarItem from "./SidebarItem.vue";
 import variables from "@/styles/variables.scss";
+import Logo from "./Logo.vue";
 
 export default {
   name: "Sidebar",
   components: {
     SidebarItem,
+    Logo,
   },
   computed: {
+    showLogo() {
+      // return this.$store.state.settings.sidebarLogo
+      return true;
+    },
     variables() {
       return variables;
+    },
+    isCollapse() {
+      // return !this.sidebar.opened
+      return false;
     },
   },
   created() {
@@ -42,7 +53,7 @@ export default {
   },
   data() {
     return {
-      isCollapse: false,
+      // isCollapse: false,
     };
   },
 
