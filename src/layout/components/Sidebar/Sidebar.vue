@@ -7,7 +7,7 @@
     <logo v-if="showLogo" :collapse="isCollapse" />
     <el-menu
       class="el-menu-vertical-demo"
-      :default-active="$route.path"
+      :default-active="activeMenu"
       :background-color="variables.menuBg"
       :text-color="variables.menuText"
       :unique-opened="true"
@@ -19,7 +19,7 @@
       mode="vertical"
       router
     >
-      <SidebarItem :list="$router.options.routes"></SidebarItem>
+      <sidebar-item :list="routes"></sidebar-item>
     </el-menu>
   </div>
 </template>
@@ -36,6 +36,18 @@ export default {
     Logo,
   },
   computed: {
+    routes() {
+      return this.$router.options.routes;
+    },
+    activeMenu() {
+      const route = this.$route;
+      console.log(route);
+      const { meta, path } = route;
+      if (meta.activeMenu) {
+        return meta.activeMenu;
+      }
+      return path;
+    },
     showLogo() {
       // return this.$store.state.settings.sidebarLogo
       return true;

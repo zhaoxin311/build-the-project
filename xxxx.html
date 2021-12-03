@@ -1,0 +1,54 @@
+<html>
+<head>
+ <title>客户端压缩文件测试</title>
+ <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" ></script>
+ <script src="./jszip.js" ></script>
+</head>
+<body>
+ <span>选择文件:</span><input type="file" id="files1" /> <hr>
+ <button onclick="toZip()" >压缩选择的文件并上传</button>
+ <script >
+    function toZip(){
+	  
+	     //file.files 是一个fileList对象 fileList里面是file对象
+          var file = document.getElementById("files1");
+		 
+		 //文件读取成功 将文件打包成zip
+		 
+		  var zip = new JSZip();
+		  
+		  //添加需要压缩的文件 file对象
+		  zip.file(file.files[0].name, file.files[0]);
+          //zip.file("mimetype", "application/zip");
+		  
+		  //return promise对象   该方法是异步方法 需要注意！上传和修改文件内容需要在此方法中，我就是因为这个坑浪费三四个小时
+		  zip.generateAsync({type:"Blob",compression: "DEFLATE"}).then(function(content) {
+		  
+		    //第一种方法
+		    //创建file对象
+			var fils = new File([content],'test.zip',{type: "zip"});
+			 
+			//创建提交表单 并将file对象放入form表单中
+			var formData = new FormData();
+			formData.append("file",fils);
+			  
+			//第二种方法 未测试 这个我也是看别人的:https://www.jianshu.com/p/cda557daad1f
+			var fromData2 = new FormData();
+			formData.append("blob",content);
+			
+			//ajax上传formData
+			 $.ajax({
+				url:'upload',
+				type:'POST',
+				data:formData,
+				processData:false,
+				contentType:false,
+				success:function (data) {
+				}
+			 });
+		  });
+	  
+	}
+ </script>
+<body>
+<html>
