@@ -119,7 +119,7 @@ export const constantRoutes = [
   },
   {
     path: "/gedanguanli",
-    name: "歌单管理",
+    name: "测试管理",
     icon: "el-icon-message-solid",
     component: Layout,
     children: [
