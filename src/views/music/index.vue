@@ -16,7 +16,7 @@
     <br />
     <el-button @click="changeMoney">转换</el-button>
 
-    转换后：<span>{{ chMoney }}</span>
+    转换后：<span>{{ chMoney }}</span> <br />
 
     <el-button @click="arrayObjSort">转换</el-button>
   </div>
