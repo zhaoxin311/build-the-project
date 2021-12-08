@@ -19,6 +19,37 @@
     转换后：<span>{{ chMoney }}</span> <br />
 
     <el-button @click="arrayObjSort">转换</el-button>
+    <h1>范围随机数</h1>
+    最小数：<input type="number" v-model="min" /><br />
+    最大数：<input type="number" v-model="max" /><br />
+    <el-button @click="getRandom">获取随机数</el-button
+    ><span>{{ randomNum }}</span>
+    <h1>字符转换</h1>
+    <input type="text" v-model="str" />
+    <el-button @click="changeCase((changeNum = 1))">首字母大写</el-button>
+    <el-button @click="changeCase((changeNum = 2))">首字母小写</el-button>
+    <el-button @click="changeCase((changeNum = 3))">大小写转换</el-button>
+    <el-button @click="changeCase((changeNum = 4))">全部大写</el-button>
+    <el-button @click="changeCase((changeNum = 5))">全部小写</el-button>
+    <h1>计算日期差函数</h1>
+    <el-date-picker
+      v-model="date1"
+      type="date"
+      placeholder="选择日期"
+      format="yyyy 年 MM 月 dd 日"
+      value-format="yyyy-MM-dd"
+    />
+    <!-- format:显示的格式，value-format：获取的时间格式 -->
+    <el-date-picker
+      v-model="date2"
+      type="date"
+      placeholder="选择日期"
+      format="yyyy 年 MM 月 dd 日"
+      value-format="yyyy-MM-dd"
+    />
+    <el-button @click="datediff"
+      ><span>日期时间差：{{ timeDiff }} 天</span></el-button
+    >
   </div>
 </template>
 <script>
@@ -27,6 +58,9 @@ import { keepAnyDecimal } from "@/utils/keepDecimal";
 import { convertCurrency } from "@/utils/money";
 import { objTransArray } from "@/utils/objToArray";
 import { arrayObjSort } from "@/utils/arraySort";
+import { random } from "@/utils/random";
+import { changeCase } from "@/utils/changeCase";
+import { Datediff } from "@/utils/dateDiff";
 
 export default {
   data() {
@@ -51,6 +85,14 @@ export default {
         { name: "zoom", age: 32, height: 183, sex: "nan" },
       ],
       orderByType: "desc",
+      min: 1,
+      max: 2,
+      randomNum: 1.3,
+      str: "abcdefg",
+      changeNum: 1,
+      date1: "",
+      date2: "",
+      timeDiff: "时间",
     };
   },
   watch: {},
@@ -86,6 +128,17 @@ export default {
         this.orderByType
       );
       console.log("排序之后的数组:", array2);
+    },
+    getRandom() {
+      this.randomNum = random(this.min, this.max);
+    },
+    changeCase(changeNum) {
+      // 1:首字母大写 2：首字母小写 3：大小写转换 4：全部大写 5：全部小写
+      this.str = changeCase(this.str, changeNum);
+    },
+    datediff() {
+      console.log(this.date2, this.date1);
+      this.timeDiff = Datediff(this.date1, this.date2);
     },
   },
 };
