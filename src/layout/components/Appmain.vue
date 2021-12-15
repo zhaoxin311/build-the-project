@@ -1,8 +1,10 @@
 <template>
   <section class="app-main">
-    <transition name="fade-transform" mode="out-in">
-      <router-view :key="key" />
-    </transition>
+    <div class="app-main-con">
+      <transition name="fade-transform" mode="out-in">
+        <router-view :key="key" />
+      </transition>
+    </div>
   </section>
 </template>
 
@@ -17,12 +19,18 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style scoped lang="scss">
 .app-main {
   min-height: calc(100vh - 80px);
   width: 100%;
   position: relative;
   overflow: hidden;
+  .app-main-con {
+    margin: 15px;
+    // background: #000;
+    min-height: calc(100vh - 110px);
+    border-radius: 10px;
+  }
 }
 .fixed-header + .app-main {
   padding-top: 50px;

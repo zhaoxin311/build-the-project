@@ -119,13 +119,25 @@ export const constantRoutes = [
   },
   {
     path: "/gedanguanli",
-    name: "测试管理",
+    name: "JS测试",
     icon: "el-icon-message-solid",
     component: Layout,
     children: [
       {
         path: "/gedanguanli",
         component: () => import("../views/music/index.vue"),
+      },
+    ],
+  },
+  {
+    path: "/css",
+    name: "CSS经典",
+    icon: "el-icon-message-solid",
+    component: Layout,
+    children: [
+      {
+        path: "/css",
+        component: () => import("../views/css/index.vue"),
       },
     ],
   },
