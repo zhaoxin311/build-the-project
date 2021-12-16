@@ -5,7 +5,7 @@
         <div class="grid-content bg-purple">
           <el-card class="box-card">
             <div slot="header" class="">
-              <span style="font-size: 16px">水平居中之margin</span>
+              <span style="font-size: 16px; font-weight:bold">水平居中之margin</span>
               <el-button v-if="show1" type="text" class="right-button" @click="show1 = !show1">收起</el-button>
               <el-button v-if="!show1" type="text" class="right-button" @click="show1 = !show1">展开</el-button>
             </div>
@@ -23,7 +23,7 @@
         <div class="grid-content bg-purple">
           <el-card class="box-card">
             <div slot="header" class="">
-              <span style="font-size: 16px">水平垂直居中之绝对定位</span>
+              <span style="font-size: 16px; font-weight:bold">水平垂直居中之绝对定位</span>
               <el-button v-if="show2" type="text" class="right-button" @click="show2 = !show2"> 收起 </el-button>
               <el-button v-if="!show2" type="text" class="right-button" @click="show2 = !show2"> 展开 </el-button>
             </div>
@@ -41,7 +41,7 @@
         <div class="grid-content bg-purple">
           <el-card class="box-card">
             <div slot="header" class="">
-              <span style="font-size: 16px">水平垂直居中之父元素flex弹性布局</span>
+              <span style="font-size: 16px; font-weight:bold">水平垂直居中之父元素flex弹性布局</span>
               <el-button v-if="show3" type="text" class="right-button" @click="show3 = !show3"> 收起 </el-button>
               <el-button v-if="!show3" type="text" class="right-button" @click="show3 = !show3"> 展开 </el-button>
             </div>
@@ -59,7 +59,7 @@
         <div class="grid-content bg-purple">
           <el-card class="box-card">
             <div slot="header" class="">
-              <span style="font-size: 16px">水平垂直居中之margin-auto法</span>
+              <span style="font-size: 16px; font-weight:bold">水平垂直居中之margin-auto法</span>
               <el-button v-if="show4" type="text" class="right-button" @click="show4 = !show4"> 收起 </el-button>
               <el-button v-if="!show4" type="text" class="right-button" @click="show4 = !show4"> 展开 </el-button>
             </div>
@@ -154,6 +154,41 @@
         </div>
       </el-col>
     </el-row>
+    <el-row :gutter="20">
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <el-card class="box-card">
+            <div slot="header" class="">
+              <span style="font-size: 16px; font-weight:bold">盒子模型</span>
+              <el-button v-if="show31" type="text" class="right-button" @click="show31 = !show31">收起</el-button>
+              <el-button v-if="!show31" type="text" class="right-button" @click="show31 = !show31">展开</el-button>
+            </div>
+            <transition name="fade">
+              <div v-if="show31" class="text item">
+                <div class="out31">
+                  <div class="in31" />
+                </div>
+              </div>
+            </transition>
+          </el-card>
+        </div>
+      </el-col>
+      <el-col :span="6"><div class="grid-content bg-purple">
+        <el-card class="box-card">
+          <div slot="header" class="">
+            <span style="font-size: 16px; font-weight:bold">CSS优先级</span>
+            <el-button v-if="show31" type="text" class="right-button" @click="show31 = !show31">收起</el-button>
+            <el-button v-if="!show31" type="text" class="right-button" @click="show31 = !show31">展开</el-button>
+          </div>
+          <transition name="fade">
+            <div v-if="show31" class="text item cssStyle">
+              <div id="idStyle" class="box classStyle" style="color:rgb(159, 20, 240)">CSS优先级关系: <br> 内联样式 > ID 选择器 > class类选择器 > 标签选择器 > 通配选择器</div>
+            </div>
+          </transition>
+        </el-card></div></el-col>
+      <el-col :span="6"><div class="grid-content bg-purple" /></el-col>
+      <el-col :span="6"><div class="grid-content bg-purple" /></el-col>
+    </el-row>
   </div>
 </template>
 <script>
@@ -171,7 +206,8 @@ export default {
       star1: 1.2,
       star2: 3.4,
       star3: 4.5,
-      star4: 4.7
+      star4: 4.7,
+      show31: true
     }
   }
 }
@@ -363,5 +399,31 @@ export default {
   height: 70px;
   background: rgb(188, 236, 76);
   float: right;
+}
+.out31 {
+  width: 200px;
+  height: 150px;
+  border: 10px solid #999;
+  background: rgb(91, 228, 233);
+}
+.in31 {
+  width: 200px;
+  height: 150px;
+  background: rgb(188, 236, 76,0.18);
+  padding: 10px;
+  border: 10px solid rgb(186, 36, 212);
+  box-sizing: border-box;
+}
+.cssStyle *{
+  color: greenyellow ;
+}
+.cssStyle div{
+  color: rgb(226, 93, 93);
+}
+.classStyle{
+  color: rgb(211, 240, 46);
+}
+#idStyle{
+  color: rgb(28, 13, 235) !important;
 }
 </style>

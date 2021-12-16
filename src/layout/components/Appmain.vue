@@ -10,14 +10,14 @@
 
 <script>
 export default {
-  name: "AppMain",
+  name: 'AppMain',
   computed: {
     key() {
       // 只要保证 key 唯一性就可以了，保证不同页面的 key 不相同
-      return this.$route.path;
-    },
-  },
-};
+      return this.$route.path
+    }
+  }
+}
 </script>
 <style scoped lang="scss">
 .app-main {
