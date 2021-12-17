@@ -24,11 +24,11 @@
           <el-card class="box-card">
             <div slot="header" class="">
               <span style="font-size: 16px; font-weight:bold">水平垂直居中之绝对定位</span>
-              <el-button v-if="show2" type="text" class="right-button" @click="show2 = !show2"> 收起 </el-button>
-              <el-button v-if="!show2" type="text" class="right-button" @click="show2 = !show2"> 展开 </el-button>
+              <el-button v-if="show1" type="text" class="right-button" @click="show1 = !show1"> 收起 </el-button>
+              <el-button v-if="!show1" type="text" class="right-button" @click="show1 = !show1"> 展开 </el-button>
             </div>
             <transition name="slide-fade">
-              <div v-if="show2" class="text item">
+              <div v-if="show1" class="text item">
                 <div class="out2">
                   <div class="in2" />
                 </div>
@@ -42,11 +42,11 @@
           <el-card class="box-card">
             <div slot="header" class="">
               <span style="font-size: 16px; font-weight:bold">水平垂直居中之父元素flex弹性布局</span>
-              <el-button v-if="show3" type="text" class="right-button" @click="show3 = !show3"> 收起 </el-button>
-              <el-button v-if="!show3" type="text" class="right-button" @click="show3 = !show3"> 展开 </el-button>
+              <el-button v-if="show1" type="text" class="right-button" @click="show1 = !show1"> 收起 </el-button>
+              <el-button v-if="!show1" type="text" class="right-button" @click="show1 = !show1"> 展开 </el-button>
             </div>
             <transition name="fade">
-              <div v-if="show3" class="text item">
+              <div v-if="show1" class="text item">
                 <div class="out3">
                   <div class="in3" />
                 </div>
@@ -60,11 +60,11 @@
           <el-card class="box-card">
             <div slot="header" class="">
               <span style="font-size: 16px; font-weight:bold">水平垂直居中之margin-auto法</span>
-              <el-button v-if="show4" type="text" class="right-button" @click="show4 = !show4"> 收起 </el-button>
-              <el-button v-if="!show4" type="text" class="right-button" @click="show4 = !show4"> 展开 </el-button>
+              <el-button v-if="show1" type="text" class="right-button" @click="show1 = !show1"> 收起 </el-button>
+              <el-button v-if="!show1" type="text" class="right-button" @click="show1 = !show1"> 展开 </el-button>
             </div>
             <transition name="fade">
-              <div v-if="show4" class="text item">
+              <div v-if="show1" class="text item">
                 <div class="out4">
                   <div class="in4" />
                 </div>
@@ -81,11 +81,11 @@
             <div slot="header" class="">
               <span style="font-size: 16px; font-weight:bold">清除浮动</span><br>
               推荐使用指数：<el-rate v-model="star1" disabled show-score text-color="#ff9900" score-template="{value}分" style="display:contents" />
-              <el-button v-if="show21" type="text" class="right-button" @click="show21 = !show21">收起</el-button>
-              <el-button v-if="!show21" type="text" class="right-button" @click="show21 = !show21">展开</el-button>
+              <el-button v-if="show2" type="text" class="right-button" @click="show2 = !show2">收起</el-button>
+              <el-button v-if="!show2" type="text" class="right-button" @click="show2 = !show2">展开</el-button>
             </div>
             <transition name="fade">
-              <div v-if="show21" class="text item">
+              <div v-if="show2" class="text item">
                 <div class="out21">
                   <div class="in21" />
                 </div>
@@ -101,11 +101,11 @@
               <span style="font-size: 16px; font-weight:bold">清除浮动</span><br>
               推荐使用指数：<el-rate v-model="star2" disabled show-score text-color="#ff9900" score-template="{value}分" style="display:contents" />
 
-              <el-button v-if="show22" type="text" class="right-button" @click="show22 = !show22">收起</el-button>
-              <el-button v-if="!show22" type="text" class="right-button" @click="show22 = !show22">展开</el-button>
+              <el-button v-if="show2" type="text" class="right-button" @click="show2 = !show2">收起</el-button>
+              <el-button v-if="!show2" type="text" class="right-button" @click="show2 = !show2">展开</el-button>
             </div>
             <transition name="fade">
-              <div v-if="show22" class="text item">
+              <div v-if="show2" class="text item">
                 <div class="out22">
                   <div class="in22" />
                   <div class="clear-float" />
@@ -121,11 +121,11 @@
             <div slot="header" class="">
               <span style="font-size: 16px; font-weight:bold">清除浮动</span><br>
               推荐使用指数：<el-rate v-model="star3" disabled show-score text-color="#ff9900" score-template="{value}分" style="display:contents" />
-              <el-button v-if="show23" type="text" class="right-button" @click="show23 = !show23">收起</el-button>
-              <el-button v-if="!show23" type="text" class="right-button" @click="show23 = !show23">展开</el-button>
+              <el-button v-if="show2" type="text" class="right-button" @click="show2 = !show2">收起</el-button>
+              <el-button v-if="!show2" type="text" class="right-button" @click="show2 = !show2">展开</el-button>
             </div>
             <transition name="fade">
-              <div v-if="show23" class="text item">
+              <div v-if="show2" class="text item">
                 <div class="out23">
                   <div class="in23" />
                 </div>
@@ -140,11 +140,11 @@
             <div slot="header" class="">
               <span style="font-size: 16px; font-weight:bold">清除浮动</span><br>
               推荐使用指数：<el-rate v-model="star4" disabled show-score text-color="#ff9900" score-template="{value}分" style="display:contents" />
-              <el-button v-if="show24" type="text" class="right-button" @click="show24 = !show24">收起</el-button>
-              <el-button v-if="!show24" type="text" class="right-button" @click="show24 = !show24">展开</el-button>
+              <el-button v-if="show2" type="text" class="right-button" @click="show2 = !show2">收起</el-button>
+              <el-button v-if="!show2" type="text" class="right-button" @click="show2 = !show2">展开</el-button>
             </div>
             <transition name="fade">
-              <div v-if="show24" class="text item">
+              <div v-if="show2" class="text item">
                 <div class="out24">
                   <div class="in24" />
                 </div>
@@ -160,11 +160,11 @@
           <el-card class="box-card">
             <div slot="header" class="">
               <span style="font-size: 16px; font-weight:bold">盒子模型</span>
-              <el-button v-if="show31" type="text" class="right-button" @click="show31 = !show31">收起</el-button>
-              <el-button v-if="!show31" type="text" class="right-button" @click="show31 = !show31">展开</el-button>
+              <el-button v-if="show3" type="text" class="right-button" @click="show3 = !show3">收起</el-button>
+              <el-button v-if="!show3" type="text" class="right-button" @click="show3 = !show3">展开</el-button>
             </div>
             <transition name="fade">
-              <div v-if="show31" class="text item">
+              <div v-if="show3" class="text item">
                 <div class="out31">
                   <div class="in31" />
                 </div>
@@ -177,11 +177,11 @@
         <el-card class="box-card">
           <div slot="header" class="">
             <span style="font-size: 16px; font-weight:bold">CSS优先级</span>
-            <el-button v-if="show31" type="text" class="right-button" @click="show31 = !show31">收起</el-button>
-            <el-button v-if="!show31" type="text" class="right-button" @click="show31 = !show31">展开</el-button>
+            <el-button v-if="show4" type="text" class="right-button" @click="show4 = !show4">收起</el-button>
+            <el-button v-if="!show4" type="text" class="right-button" @click="show4 = !show4">展开</el-button>
           </div>
           <transition name="fade">
-            <div v-if="show31" class="text item cssStyle">
+            <div v-if="show4" class="text item cssStyle">
               <div id="idStyle" class="box classStyle" style="color:rgb(159, 20, 240)">CSS优先级关系: <br> 内联样式 > ID 选择器 > class类选择器 > 标签选择器 > 通配选择器</div>
             </div>
           </transition>
@@ -199,15 +199,10 @@ export default {
       show2: false,
       show3: false,
       show4: false,
-      show21: false,
-      show22: false,
-      show23: false,
-      show24: false,
       star1: 1.2,
       star2: 3.4,
       star3: 4.5,
-      star4: 4.7,
-      show31: true
+      star4: 4.7
     }
   }
 }
