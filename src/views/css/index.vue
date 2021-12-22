@@ -173,19 +173,22 @@
           </el-card>
         </div>
       </el-col>
-      <el-col :span="6"><div class="grid-content bg-purple">
-        <el-card class="box-card">
-          <div slot="header" class="">
-            <span style="font-size: 16px; font-weight:bold">CSS优先级</span>
-            <el-button v-if="show4" type="text" class="right-button" @click="show4 = !show4">收起</el-button>
-            <el-button v-if="!show4" type="text" class="right-button" @click="show4 = !show4">展开</el-button>
-          </div>
-          <transition name="fade">
-            <div v-if="show4" class="text item cssStyle">
-              <div id="idStyle" class="box classStyle" style="color:rgb(159, 20, 240)">CSS优先级关系: <br> 内联样式 > ID 选择器 > class类选择器 > 标签选择器 > 通配选择器</div>
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <el-card class="box-card">
+            <div slot="header" class="">
+              <span style="font-size: 16px; font-weight:bold">CSS优先级</span>
+              <el-button v-if="show4" type="text" class="right-button" @click="show4 = !show4">收起</el-button>
+              <el-button v-if="!show4" type="text" class="right-button" @click="show4 = !show4">展开</el-button>
             </div>
-          </transition>
-        </el-card></div></el-col>
+            <transition name="fade">
+              <div v-if="show4" class="text item cssStyle">
+                <div id="idStyle" class="box classStyle" style="color:rgb(159, 20, 240)">CSS优先级关系: <br> 内联样式 > ID 选择器 > class类选择器 > 标签选择器 > 通配选择器</div>
+              </div>
+            </transition>
+          </el-card>
+        </div>
+      </el-col>
       <el-col :span="6"><div class="grid-content bg-purple" /></el-col>
       <el-col :span="6"><div class="grid-content bg-purple" /></el-col>
     </el-row>

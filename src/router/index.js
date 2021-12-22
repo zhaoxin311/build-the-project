@@ -1,9 +1,9 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Layout from "@/layout/index.vue";
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Layout from '@/layout/index.vue'
 // import Home from "@/views/Home.vue";
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 // {
 //   path: "/permission",
@@ -31,116 +31,128 @@ Vue.use(VueRouter);
 
 export const constantRoutes = [
   {
-    path: "/login",
-    component: () => import("@/views/login/index.vue"),
-    hidden: true,
+    path: '/login',
+    component: () => import('@/views/login/index.vue'),
+    hidden: true
   },
 
   {
-    path: "/404",
-    component: () => import("@/views/404.vue"),
-    hidden: true,
+    path: '/404',
+    component: () => import('@/views/404.vue'),
+    hidden: true
   },
   {
-    path: "/",
+    path: '/',
     component: Layout,
-    redirect: "/home",
-    icon: "el-icon-s-home",
-    name: "系统首页",
+    redirect: '/home',
+    icon: 'el-icon-s-home',
+    name: '系统首页',
     children: [
       {
-        path: "home",
-        name: "Home",
-        component: () => import("@/views/Home.vue"),
-        meta: { title: "首页", icon: "el-icon-s-home", affix: true },
-      },
-    ],
+        path: 'home',
+        name: 'Home',
+        component: () => import('@/views/Home.vue'),
+        meta: { title: '首页', icon: 'el-icon-s-home', affix: true }
+      }
+    ]
   },
   {
-    path: "/yezhuguanli",
-    name: "业主管理",
-    icon: "el-icon-s-custom",
-    redirect: "/yezhuguanli",
+    path: '/yezhuguanli',
+    name: '业主管理',
+    icon: 'el-icon-s-custom',
+    redirect: '/yezhuguanli',
     component: Layout,
     hidden: true,
     children: [
       {
-        path: "/yezhuguanli",
-        component: () => import("../views/owner/index.vue"),
-      },
-    ],
+        path: '/yezhuguanli',
+        component: () => import('../views/owner/index.vue')
+      }
+    ]
   },
 
   {
-    path: "/xinwenzixun",
+    path: '/xinwenzixun',
     component: Layout,
-    name: "新闻资讯",
-    redirect: "/xinwenzixun/menu1-1",
-    icon: "el-icon-s-management",
+    name: '新闻资讯',
+    redirect: '/xinwenzixun/menu1-1',
+    icon: 'el-icon-s-management',
     // hidden: true,
     children: [
       {
-        path: "/xinwenzixun/menu1-1",
-        component: () => import("../views/news/menu1-1/index.vue"),
-        name: "新闻资讯-1",
+        path: '/xinwenzixun/menu1-1',
+        component: () => import('../views/news/menu1-1/index.vue'),
+        name: '新闻资讯-1'
         // icon: "el-icon-s-management",
       },
       {
-        path: "/xinwenzixun/menu1-2",
-        component: () => import("../views/news/menu1-2/index.vue"),
-        name: "新闻资讯-2",
+        path: '/xinwenzixun/menu1-2',
+        component: () => import('../views/news/menu1-2/index.vue'),
+        name: '新闻资讯-2'
         // icon: "el-icon-s-management",
-      },
-    ],
+      }
+    ]
   },
   {
-    path: "/shoucangguanli",
-    name: "收藏管理",
-    icon: "el-icon-star-on",
+    path: '/shoucangguanli',
+    name: '收藏管理',
+    icon: 'el-icon-star-on',
     component: Layout,
     children: [
       {
-        path: "/shoucangguanli",
-        component: () => import("../views/like/index.vue"),
-      },
-    ],
+        path: '/shoucangguanli',
+        component: () => import('../views/like/index.vue')
+      }
+    ]
   },
   {
-    path: "/liebiaoguanli",
-    name: "列表管理",
-    icon: "el-icon-s-operation",
+    path: '/liebiaoguanli',
+    name: '列表管理',
+    icon: 'el-icon-s-operation',
     component: Layout,
     children: [
       {
-        path: "/liebiaoguanli",
-        component: () => import("../views/list/index.vue"),
-      },
-    ],
+        path: '/liebiaoguanli',
+        component: () => import('../views/list/index.vue')
+      }
+    ]
   },
   {
-    path: "/gedanguanli",
-    name: "JS测试",
-    icon: "el-icon-message-solid",
+    path: '/gedanguanli',
+    name: 'JS测试',
+    icon: 'el-icon-message-solid',
     component: Layout,
     children: [
       {
-        path: "/gedanguanli",
-        component: () => import("../views/music/index.vue"),
-      },
-    ],
+        path: '/gedanguanli',
+        component: () => import('../views/music/index.vue')
+      }
+    ]
   },
   {
-    path: "/css",
-    name: "CSS经典",
-    icon: "el-icon-message-solid",
+    path: '/css',
+    name: 'CSS经典',
+    icon: 'el-icon-message-solid',
     component: Layout,
     children: [
       {
-        path: "/css",
-        component: () => import("../views/css/index.vue"),
-      },
-    ],
+        path: '/css',
+        component: () => import('../views/css/index.vue')
+      }
+    ]
   },
+  {
+    path: '/loading',
+    name: 'Loading动画',
+    icon: 'el-icon-message-solid',
+    component: Layout,
+    children: [
+      {
+        path: '/loading',
+        component: () => import('../views/css/loading/index.vue')
+      }
+    ]
+  }
 
   // {
   //   path: "/",
@@ -157,21 +169,21 @@ export const constantRoutes = [
 
   // 404 page must be placed at the end !!!
   // { path: "*", redirect: "/404", hidden: true },
-];
+]
 
 const createRouter = () =>
   new VueRouter({
     // mode: "history",
     // base: process.env.BASE_URL,
     scrollBehavior: () => ({ y: 0 }),
-    routes: constantRoutes,
-  });
+    routes: constantRoutes
+  })
 
-const router = createRouter();
+const router = createRouter()
 
 export function resetRouter() {
-  const newRouter = createRouter();
-  router.matcher = newRouter.matcher;
+  const newRouter = createRouter()
+  router.matcher = newRouter.matcher
 }
 
-export default router;
+export default router
