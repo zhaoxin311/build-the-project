@@ -41,7 +41,26 @@
           </el-card>
         </div>
       </el-col>
-      <el-col :span="6"><div class="grid-content bg-purple" /></el-col>
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <el-card class="box-card">
+            <div slot="header" class="">
+              <span style="font-size: 16px; font-weight:bold">Loading动画2</span>
+              <el-button v-if="show1" type="text" class="right-button" @click="show1 = !show1">收起</el-button>
+              <el-button v-if="!show1" type="text" class="right-button" @click="show1 = !show1">展开</el-button>
+            </div>
+            <transition name="fade">
+              <div v-if="show1" class="text item cssStyle">
+                <div class="loader-container">1
+                  <div class="loader-child" />
+                  <div class="loader-child" />
+                  <div class="loader-child" />
+                </div>
+              </div>
+            </transition>
+          </el-card>
+        </div>
+      </el-col>
       <el-col :span="6"><div class="grid-content bg-purple" /></el-col>
     </el-row>
   </div>
