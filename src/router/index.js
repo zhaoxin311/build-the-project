@@ -107,7 +107,7 @@ export const constantRoutes = [
   },
   {
     path: '/liebiaoguanli',
-    name: '列表管理',
+    name: '组件通信',
     icon: 'el-icon-s-operation',
     component: Layout,
     children: [
