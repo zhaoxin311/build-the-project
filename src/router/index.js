@@ -152,6 +152,18 @@ export const constantRoutes = [
         component: () => import('../views/css/loading/index.vue')
       }
     ]
+  },
+  {
+    path: '/tong',
+    name: '通用样式',
+    icon: 'el-icon-message-solid',
+    component: Layout,
+    children: [
+      {
+        path: '/tong',
+        component: () => import('../views/tong/index.vue')
+      }
+    ]
   }
 
   // {
