@@ -22,3 +22,12 @@ export default {
   }
 }
 </script>
+<style scoped lang="scss">
+.child{
+  width: 280px;
+  height: 100px;
+  padding: 0 10px;
+  // margin: 0 10px;
+  border: 1px solid rgb(6, 238, 238);
+}
+</style>
