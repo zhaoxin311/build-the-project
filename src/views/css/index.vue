@@ -178,11 +178,11 @@
           <el-card class="box-card">
             <div slot="header" class="">
               <span style="font-size: 16px; font-weight:bold">CSS优先级</span>
-              <el-button v-if="show4" type="text" class="right-button" @click="show4 = !show4">收起</el-button>
-              <el-button v-if="!show4" type="text" class="right-button" @click="show4 = !show4">展开</el-button>
+              <el-button v-if="show3" type="text" class="right-button" @click="show3 = !show3">收起</el-button>
+              <el-button v-if="!show3" type="text" class="right-button" @click="show3 = !show3">展开</el-button>
             </div>
             <transition name="fade">
-              <div v-if="show4" class="text item cssStyle">
+              <div v-if="show3" class="text item cssStyle">
                 <div id="idStyle" class="box classStyle" style="color:rgb(159, 20, 240)">CSS优先级关系: <br> 内联样式 > ID 选择器 > class类选择器 > 标签选择器 > 通配选择器</div>
               </div>
             </transition>
@@ -191,6 +191,83 @@
       </el-col>
       <el-col :span="6"><div class="grid-content bg-purple" /></el-col>
       <el-col :span="6"><div class="grid-content bg-purple" /></el-col>
+    </el-row>
+    <el-row :gutter="20">
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <div class="grid-content bg-purple">
+            <el-card class="box-card">
+              <div slot="header" class="">
+                <span style="font-size: 16px; font-weight:bold">Loading动画1</span>
+                <el-button v-if="show4" type="text" class="right-button" @click="show4 = !show4">收起</el-button>
+                <el-button v-if="!show4" type="text" class="right-button" @click="show4 = !show4">展开</el-button>
+              </div>
+              <transition name="fade">
+                <div v-if="show4">
+                  <div class="triangle" />
+                  <div class="out-0">
+                    <div class="in-0" />
+                  </div>
+                  <div class="out-1">
+                    <div class="in-1" />
+                  </div>
+                </div>
+              </transition>
+            </el-card>
+          </div>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <el-card class="box-card">
+            <div slot="header" class="">
+              <span style="font-size: 16px; font-weight:bold">Loading动画2</span>
+              <el-button v-if="show4" type="text" class="right-button" @click="show4 = !show4">收起</el-button>
+              <el-button v-if="!show4" type="text" class="right-button" @click="show4 = !show4">展开</el-button>
+            </div>
+            <transition name="fade">
+              <div v-if="show4" contenteditable="true">
+                <p class="text-one">contenteditable="true" 可编辑状态</p>
+                <p class="text-one">超出宽度范围的文本展示为...嘻嘻嘻事事顺心是是是</p>
+                <p class="text-more">超出 <br> 行数时， <br> 多余的行数 <br> 文本展示为...</p>
+
+              </div>
+            </transition>
+          </el-card>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <el-card class="box-card">
+            <div slot="header" class="">
+              <span style="font-size: 16px; font-weight:bold">Loading动画2</span>
+              <el-button v-if="show4" type="text" class="right-button" @click="show4 = !show4">收起</el-button>
+              <el-button v-if="!show4" type="text" class="right-button" @click="show4 = !show4">展开</el-button>
+            </div>
+            <transition name="fade">
+              <div v-if="show4">
+                33
+              </div>
+            </transition>
+          </el-card>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <el-card class="box-card">
+            <div slot="header" class="">
+              <span style="font-size: 16px; font-weight:bold">Loading动画2</span>
+              <el-button v-if="show4" type="text" class="right-button" @click="show4 = !show4">收起</el-button>
+              <el-button v-if="!show4" type="text" class="right-button" @click="show4 = !show4">展开</el-button>
+            </div>
+            <transition name="fade">
+              <div v-if="show4">
+                33
+              </div>
+            </transition>
+          </el-card>
+        </div>
+      </el-col>
     </el-row>
   </div>
 </template>
@@ -423,5 +500,60 @@ export default {
 }
 #idStyle{
   color: rgb(28, 13, 235) !important;
+}
+
+.triangle{
+  width: 0;
+  height: 0;
+  border: 5px solid  transparent;
+  border-top-color: red;
+}
+.out-0{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border: 4px solid rgb(17, 219, 34);
+  .in-0{
+    width: 50px;
+    height: 50px;
+    background: rgb(226, 205, 10);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+}
+.out-1{
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  // 父级控制子集居中
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 4px solid rgb(17, 219, 34);
+  .in-1{
+    width: 50px;
+    height: 50px;
+    background: rgb(226, 205, 10);
+  }
+}
+.text-one{
+  width: 200px;
+  border: 1px solid rgb(17, 219, 34);
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.text-more{
+  width: 200px;
+  border: 1px solid rgb(17, 219, 34);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
 }
 </style>
