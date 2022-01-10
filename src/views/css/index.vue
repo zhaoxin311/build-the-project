@@ -198,7 +198,7 @@
           <div class="grid-content bg-purple">
             <el-card class="box-card">
               <div slot="header" class="">
-                <span style="font-size: 16px; font-weight:bold">Loading动画1</span>
+                <span style="font-size: 16px; font-weight:bold">常用的垂直水平居中</span>
                 <el-button v-if="show4" type="text" class="right-button" @click="show4 = !show4">收起</el-button>
                 <el-button v-if="!show4" type="text" class="right-button" @click="show4 = !show4">展开</el-button>
               </div>
@@ -221,7 +221,7 @@
         <div class="grid-content bg-purple">
           <el-card class="box-card">
             <div slot="header" class="">
-              <span style="font-size: 16px; font-weight:bold">Loading动画2</span>
+              <span style="font-size: 16px; font-weight:bold">超出文本缩略...</span>
               <el-button v-if="show4" type="text" class="right-button" @click="show4 = !show4">收起</el-button>
               <el-button v-if="!show4" type="text" class="right-button" @click="show4 = !show4">展开</el-button>
             </div>
@@ -269,6 +269,74 @@
         </div>
       </el-col>
     </el-row>
+    <el-row :gutter="20">
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <div class="grid-content bg-purple">
+            <el-card class="box-card">
+              <div slot="header" class="">
+                <span style="font-size: 16px; font-weight:bold">1. Object-fit : cover</span>
+                <el-button v-if="show5" type="text" class="right-button" @click="show5 = !show5">收起</el-button>
+                <el-button v-if="!show5" type="text" class="right-button" @click="show5 = !show5">展开</el-button>
+              </div>
+              <transition name="fade">
+                <div v-if="show5">
+                  <img src="../../assets/touxiang.jpg" class="image-1" alt="">
+                </div>
+              </transition>
+            </el-card>
+          </div>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <el-card class="box-card">
+            <div slot="header" class="">
+              <span style="font-size: 16px; font-weight:bold">2. Transform: scaleX(-1) / scaleY(-1)</span>
+              <el-button v-if="show5" type="text" class="right-button" @click="show5 = !show5">收起</el-button>
+              <el-button v-if="!show5" type="text" class="right-button" @click="show5 = !show5">展开</el-button>
+            </div>
+            <transition name="fade">
+              <div v-if="show5">
+                <img src="../../assets/touxiang.jpg" class="image-2" alt="">
+              </div>
+            </transition>
+          </el-card>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <el-card class="box-card">
+            <div slot="header" class="">
+              <span style="font-size: 16px; font-weight:bold">4. Filter: drop-shadow</span>
+              <el-button v-if="show5" type="text" class="right-button" @click="show5 = !show5">收起</el-button>
+              <el-button v-if="!show5" type="text" class="right-button" @click="show5 = !show5">展开</el-button>
+            </div>
+            <transition name="fade">
+              <div v-if="show5">
+                <img src="../../assets/touxiang.jpg" class="image-3" alt="">
+              </div>
+            </transition>
+          </el-card>
+        </div>
+      </el-col>
+      <el-col :span="6">
+        <div class="grid-content bg-purple">
+          <el-card class="box-card">
+            <div slot="header" class="">
+              <span style="font-size: 16px; font-weight:bold">5. Filter: opacity</span>
+              <el-button v-if="show5" type="text" class="right-button" @click="show5 = !show5">收起</el-button>
+              <el-button v-if="!show5" type="text" class="right-button" @click="show5 = !show5">展开</el-button>
+            </div>
+            <transition name="fade">
+              <div v-if="show5">
+                <img src="../../assets/touxiang.jpg" class="image-4" alt="">
+              </div>
+            </transition>
+          </el-card>
+        </div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 <script>
@@ -279,6 +347,7 @@ export default {
       show2: false,
       show3: false,
       show4: false,
+      show5: false,
       star1: 1.2,
       star2: 3.4,
       star3: 4.5,
@@ -556,4 +625,28 @@ export default {
   -webkit-line-clamp: 3;
   overflow: hidden;
 }
+.image-1{
+  width: 200px;
+  height: 400px;
+  object-fit: cover;
+  // object-fit: contain;
+}
+.image-2{
+  width: 200px;
+  height: 400px;
+  object-fit: cover;
+  transform: scaleX(-1) scaleY(-1);
+}
+.image-3{
+  width: 200px;
+  height: 400px;
+  object-fit: cover;
+  filter: drop-shadow(30px 10px 4px #3a3a3a);
+}
+.image-4{
+  width: 200px;
+  height: 400px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  }
 </style>
