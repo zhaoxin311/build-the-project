@@ -28,8 +28,10 @@ export default {
   .app-main-con {
     margin: 15px;
     // background: #000;
-    min-height: calc(100vh - 110px);
+    height: calc(100vh - 110px);
+    overflow-x: hidden;
     border-radius: 10px;
+    padding-right: 10px;
   }
 }
 .fixed-header + .app-main {
@@ -44,4 +46,20 @@ export default {
     padding-right: 15px;
   }
 }
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  width:8px;
+}
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+  border-radius:10px;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  border-radius:10px;
+  background:rgba(0,0,0,0.1);
+}
+// ::-webkit-scrollbar-thumb:window-inactive {
+// background:rgba(255,0,0,0.4);
+// }
 </style>

@@ -641,7 +641,7 @@ export default {
   width: 200px;
   height: 400px;
   object-fit: cover;
-  filter: drop-shadow(30px 10px 4px #3a3a3a);
+  filter: drop-shadow(10px 10px 5px #3a3a3a);
 }
 .image-4{
   width: 200px;
