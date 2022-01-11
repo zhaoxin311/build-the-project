@@ -10,9 +10,6 @@
     <div class="relative">这个div元素是相对定位，它的绝对定位元素会咦她为元素定位； 如果它是 position: static; 他的绝对定位元素会跳过该元素直接以body元素直接定位
       <div class="absolute">该元素是绝对定位，相对于他的父元素定位</div>
     </div>
-
-    <div>版本3</div>
-
   </div>
 
 </template>

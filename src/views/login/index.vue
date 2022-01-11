@@ -2,56 +2,27 @@
   <div>
     <div class="app">
       <div class="content">
-        <el-form
-          ref="loginForm"
-          class="content_input"
-          :model="loginForm"
-          :rules="loginRules"
-        >
+        <el-form ref="loginForm" class="content_input" :model="loginForm" :rules="loginRules">
           <div class="title">
             <p>管理员登录</p>
           </div>
           <el-form-item prop="userName">
-            <el-input
-              v-model="loginForm.userName"
-              clearable
-              placeholder="用户名"
-            />
+            <el-input v-model="loginForm.userName" clearable placeholder="用户名" />
           </el-form-item>
           <el-form-item prop="passWord">
-            <el-input
-              v-model="loginForm.passWord"
-              clearable
-              show-password
-              placeholder="密码"
-            />
+            <el-input v-model="loginForm.passWord" clearable show-password placeholder="密码" />
           </el-form-item>
           <el-form-item prop="code">
-            <el-input
-              v-model="loginForm.code"
-              clearable
-              placeholder="验证码"
-              style="width: 180px"
-            />
-            <valid-code
-              :value.sync="validCode"
-              class="validcode"
-              style="width: 100px; height: 28px"
-            />
+            <el-input v-model="loginForm.code" clearable placeholder="验证码" style="width: 180px" />
+            <valid-code :value.sync="validCode" class="validcode" style="width: 100px; height: 28px" />
           </el-form-item>
           <!-- <el-form-item>
             <el-checkbox label="记住我" class="rememberMe"></el-checkbox>
           </el-form-item> -->
 
           <div class="content_button">
-            <el-button
-              type="primary"
-              @click="submitForm('loginForm')"
-            >登录</el-button>
-            <el-button
-              type="success"
-              @click="resetForm('loginForm')"
-            >重置</el-button>
+            <el-button type="primary" @click="submitForm('loginForm')">登录</el-button>
+            <el-button type="success" @click="resetForm('loginForm')">重置</el-button>
           </div>
           <div class="tips">
             <span style="margin-right: 20px">username: admin</span>
