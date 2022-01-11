@@ -11,7 +11,7 @@
       <div class="absolute">该元素是绝对定位，相对于他的父元素定位</div>
     </div>
 
-    <div>版本1</div>
+    <div>版本2</div>
 
   </div>
 
