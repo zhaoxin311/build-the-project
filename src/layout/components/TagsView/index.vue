@@ -1,9 +1,9 @@
 <template>
   <div class="tags-view-container">
     <router-link
-      class="tages-view"
       v-for="tag in visitedViews"
       :key="tag.path"
+      class="tages-view"
       :to="tag.path"
     >
       <!-- <el-tag
@@ -21,17 +21,17 @@ export default {
   data() {
     return {
       visitedViews: [
-        { name: "tag1", path: "/liebiaoguanli" },
-        { name: "tag2", path: "/liebiaoguanli" },
-        { name: "tag3", path: "/liebiaoguanli" },
-        { name: "tag4", path: "/liebiaoguanli" },
-        { name: "tag5", path: "/liebiaoguanli" },
-        { name: "tag6", path: "/liebiaoguanli" },
-        { name: "tag6", path: "/liebiaoguanli" },
-      ],
-    };
-  },
-};
+        { name: 'tag1', path: '/liebiaoguanli' },
+        { name: 'tag2', path: '/liebiaoguanli' },
+        { name: 'tag3', path: '/liebiaoguanli' },
+        { name: 'tag4', path: '/liebiaoguanli' },
+        { name: 'tag5', path: '/liebiaoguanli' },
+        { name: 'tag6', path: '/liebiaoguanli' },
+        { name: 'tag6', path: '/liebiaoguanli' }
+      ]
+    }
+  }
+}
 </script>
 <style scoped lang="scss">
 .tags-view-container {

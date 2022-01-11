@@ -5,7 +5,7 @@
     <div class="right-menu">
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
-          <img src="../../assets/bell.gif" class="user-avatar" />
+          <img src="../../assets/bell.gif" class="user-avatar">
           <i class="el-icon-caret-bottom" />
         </div>
         <!-- <span>下拉菜单</span> -->
@@ -29,23 +29,23 @@
 </template>
 
 <script>
-import Hamburger from "@/components/Hamburger";
-import Breadcrumb from "@/components/Breadcrumb";
+import Hamburger from '@/components/Hamburger'
+import Breadcrumb from '@/components/Breadcrumb'
 export default {
-  data() {
-    return {};
-  },
   components: {
     Hamburger,
-    Breadcrumb,
+    Breadcrumb
+  },
+  data() {
+    return {}
   },
   methods: {
     toggleSideBar() {
       // 父组件调用 vuex 改变state.sidebar.opened 的值
-      this.$store.dispatch("app/toggleSideBar");
-    },
-  },
-};
+      this.$store.dispatch('app/toggleSideBar')
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

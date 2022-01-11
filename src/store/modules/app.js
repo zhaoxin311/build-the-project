@@ -1,44 +1,44 @@
-//app.js
-import Cookies from "js-cookies";
+// app.js
+import Cookies from 'js-cookies'
 //
 const state = {
   siadebar: {
-    opened: Cookies.get("sidebarStatus")
-      ? !!+Cookies.get("sidebarStatus")
+    opened: Cookies.get('sidebarStatus')
+      ? !!+Cookies.get('sidebarStatus')
       : true,
-    withoutAnimation: false,
-  },
-};
+    withoutAnimation: false
+  }
+}
 const mutations = {
-  //展开侧边栏
+  // 展开侧边栏
   TOGGLE_SIDEBAR: (state) => {
-    state.sidebar.opened = !state.sidebar.opened;
-    state.sidebar.withoutAnimation = false;
+    state.sidebar.opened = !state.sidebar.opened
+    state.sidebar.withoutAnimation = false
     if (state.sidebar.opened) {
-      Cookies.set("sidebarStatus", 1);
+      Cookies.set('sidebarStatus', 1)
     } else {
-      Cookies.set("sidebarStatus", 0);
+      Cookies.set('sidebarStatus', 0)
     }
   },
   // 关闭侧边栏
   CLOSE_SIDEBAR: (state, withoutAnimation) => {
-    Cookies.set("sidebarStatus", 0);
-    state.sidebar.opened = false;
-    state.sidebar.withoutAnimation = withoutAnimation;
-  },
-};
+    Cookies.set('sidebarStatus', 0)
+    state.sidebar.opened = false
+    state.sidebar.withoutAnimation = withoutAnimation
+  }
+}
 const actions = {
   toggleSideBar({ commit }) {
-    commit("TOGGLE_SIDEBAR");
+    commit('TOGGLE_SIDEBAR')
   },
   closeSideBar({ commit }, { withoutAnimation }) {
-    commit("CLOSE_SIDEBAR", withoutAnimation);
-  },
-};
+    commit('CLOSE_SIDEBAR', withoutAnimation)
+  }
+}
 
 export default {
   namespaced: true,
   state,
   mutations,
-  actions,
-};
+  actions
+}

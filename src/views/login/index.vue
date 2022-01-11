@@ -3,8 +3,8 @@
     <div class="app">
       <div class="content">
         <el-form
-          class="content_input"
           ref="loginForm"
+          class="content_input"
           :model="loginForm"
           :rules="loginRules"
         >
@@ -16,7 +16,7 @@
               v-model="loginForm.userName"
               clearable
               placeholder="用户名"
-            ></el-input>
+            />
           </el-form-item>
           <el-form-item prop="passWord">
             <el-input
@@ -24,7 +24,7 @@
               clearable
               show-password
               placeholder="密码"
-            ></el-input>
+            />
           </el-form-item>
           <el-form-item prop="code">
             <el-input
@@ -32,7 +32,7 @@
               clearable
               placeholder="验证码"
               style="width: 180px"
-            ></el-input>
+            />
             <valid-code
               :value.sync="validCode"
               class="validcode"
@@ -44,12 +44,14 @@
           </el-form-item> -->
 
           <div class="content_button">
-            <el-button type="primary" @click="submitForm('loginForm')"
-              >登录</el-button
-            >
-            <el-button type="success" @click="resetForm('loginForm')"
-              >重置</el-button
-            >
+            <el-button
+              type="primary"
+              @click="submitForm('loginForm')"
+            >登录</el-button>
+            <el-button
+              type="success"
+              @click="resetForm('loginForm')"
+            >重置</el-button>
           </div>
           <div class="tips">
             <span style="margin-right: 20px">username: admin</span>
@@ -61,69 +63,69 @@
   </div>
 </template>
 <script>
-import { validUsername } from "@/utils/validate";
-import validCode from "@/components/Code/validCode.vue";
+import { validUsername } from '@/utils/validate'
+import validCode from '@/components/Code/validCode.vue'
 export default {
   components: { validCode },
   data() {
     const validateUsername = (rule, value, callback) => {
       if (!validUsername(value)) {
-        callback(new Error("Please enter the correct user name"));
+        callback(new Error('Please enter the correct user name'))
       } else {
-        callback();
+        callback()
       }
-    };
+    }
     const validatePassword = (rule, value, callback) => {
       if (value.length < 6) {
-        callback(new Error("The password can not be less than 6 digits!!"));
+        callback(new Error('The password can not be less than 6 digits!!'))
       } else {
-        callback();
+        callback()
       }
-    };
+    }
     const validateCode = (rule, value, callback) => {
       if (value.length < 4) {
-        callback(new Error("The validcode can not be less than 4 digits!!"));
-      } else if (value != this.validCode) {
-        callback(new Error("There is an error in the verification code!!"));
+        callback(new Error('The validcode can not be less than 4 digits!!'))
+      } else if (value !== this.validCode) {
+        callback(new Error('There is an error in the verification code!!'))
       } else {
-        callback();
+        callback()
       }
-    };
+    }
     return {
-      validCode: "",
+      validCode: '',
       loginForm: {
-        userName: "admin",
-        passWord: "111111",
-        code: "",
+        userName: 'admin',
+        passWord: '111111',
+        code: ''
       },
       loginRules: {
         userName: [
-          { required: true, trigger: "blur", validator: validateUsername },
+          { required: true, trigger: 'blur', validator: validateUsername }
         ],
         passWord: [
-          { required: true, trigger: "blur", validator: validatePassword },
+          { required: true, trigger: 'blur', validator: validatePassword }
         ],
-        code: [{ required: true, trigger: "blur", validator: validateCode }],
-      },
-    };
+        code: [{ required: true, trigger: 'blur', validator: validateCode }]
+      }
+    }
   },
   created() {},
   methods: {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$router.push({ path: this.redirect || "/home" });
+          this.$router.push({ path: this.redirect || '/home' })
         } else {
-          console.log("error submit!!");
-          return false;
+          console.log('error submit!!')
+          return false
         }
-      });
+      })
     },
     resetForm(formName) {
-      this.$refs[formName].resetFields();
-    },
-  },
-};
+      this.$refs[formName].resetFields()
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">

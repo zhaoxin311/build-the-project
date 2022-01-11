@@ -4,28 +4,28 @@
     <div class="main-container">
       <div class="navbar-container"><Navbar /></div>
       <!-- <div class="tags-view-container"><TagsView /></div> -->
-      <div class="app-main-style"><app-main></app-main></div>
+      <div class="app-main-style"><app-main /></div>
     </div>
   </div>
 </template>
 <script>
-import Sidebar from "./components/Sidebar/Sidebar.vue";
-import Navbar from "./components/Navbar.vue";
-import AppMain from "./components/Appmain.vue";
+import Sidebar from './components/Sidebar/Sidebar.vue'
+import Navbar from './components/Navbar.vue'
+import AppMain from './components/Appmain.vue'
 // import TagsView from "./components/TagsView/index.vue";
 
 export default {
-  name: "Layout",
+  name: 'Layout',
   components: {
     Navbar,
     Sidebar,
-    AppMain,
+    AppMain
     // TagsView,
   },
   data() {
-    return {};
-  },
-};
+    return {}
+  }
+}
 </script>
 <style scoped lang="scss">
 .app-wrapper {

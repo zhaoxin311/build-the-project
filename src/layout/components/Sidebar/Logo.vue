@@ -2,11 +2,11 @@
   <div class="sidebar-logo-container" :class="{ collapse: collapse }">
     <transition name="sidebarLogoFade">
       <router-link v-if="collapse" key="collapse" to="/">
-        <img :src="logo" class="sidebar-logo-small" />
+        <img :src="logo" class="sidebar-logo-small">
         <!-- <h1 class="sidebar-title">{{ title }}</h1> -->
       </router-link>
       <router-link v-else key="expand" to="/">
-        <img :src="logo" class="sidebar-logo-big" />
+        <img :src="logo" class="sidebar-logo-big">
         <h1 class="sidebar-title">{{ title }}</h1>
       </router-link>
     </transition>
@@ -15,20 +15,20 @@
 
 <script>
 export default {
-  name: "SidebarLogo",
+  name: 'SidebarLogo',
   props: {
     collapse: {
       type: Boolean,
-      required: true,
-    },
+      required: true
+    }
   },
   data() {
     return {
-      title: "Vue Admin Template",
-      logo: "https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png",
-    };
-  },
-};
+      title: 'Vue Admin Template',
+      logo: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

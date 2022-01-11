@@ -17,20 +17,20 @@
 
 <script>
 export default {
-  name: "Hamburger",
+  name: 'Hamburger',
   props: {
     isActive: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   methods: {
-    //在新增的点击事件中调用父组件方法
+    // 在新增的点击事件中调用父组件方法
     toggleClick() {
-      this.$emit("toggleClick");
-    },
-  },
-};
+      this.$emit('toggleClick')
+    }
+  }
+}
 </script>
 
 <style scoped>

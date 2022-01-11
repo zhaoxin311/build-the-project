@@ -8,43 +8,42 @@
       v-for="(item, index) in codeList"
       :key="index"
       :style="getStyle(item)"
-      >{{ item.code }}</span
-    >
+    >{{ item.code }}</span>
   </div>
 </template>
 
 <script>
 export default {
-  name: "ValidCode",
+  name: 'ValidCode',
   props: {
     width: {
       type: String,
-      default: "100px",
+      default: '100px'
     },
     height: {
       type: String,
-      default: "40px",
+      default: '40px'
     },
     length: {
       type: Number,
-      default: 4,
-    },
+      default: 4
+    }
   },
   data() {
     return {
-      codeList: [],
-    };
+      codeList: []
+    }
   },
   mounted() {
-    this.createdCode();
+    this.createdCode()
   },
   methods: {
     refreshCode() {
-      this.createdCode();
+      this.createdCode()
     },
     createdCode() {
-      const len = this.length;
-      const codeList = [];
+      const len = this.length
+      const codeList = []
       // const chars = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz0123456789";
       // const charsLen = chars.length;
       // 生成
@@ -52,8 +51,8 @@ export default {
         const rgb = [
           Math.round(Math.random() * 220),
           Math.round(Math.random() * 240),
-          Math.round(Math.random() * 200),
-        ];
+          Math.round(Math.random() * 200)
+        ]
         codeList.push({
           // code: chars.charAt(Math.floor(Math.random() * charsLen)),
           code: Math.random().toString(36).substr(2, 1), //
@@ -62,19 +61,19 @@ export default {
           padding: `${[Math.floor(Math.random() * 10)]}px`,
           transform: `rotate(${
             Math.floor(Math.random() * 90) - Math.floor(Math.random() * 90)
-          }deg)`,
-        });
+          }deg)`
+        })
       }
       // 指向
-      this.codeList = codeList;
+      this.codeList = codeList
       // 将当前数据派发出去
-      this.$emit("update:value", codeList.map((item) => item.code).join(""));
+      this.$emit('update:value', codeList.map((item) => item.code).join(''))
     },
     getStyle(data) {
-      return `color: ${data.color}; font-size: ${data.fontSize}; padding: ${data.padding}; transform: ${data.transform}`;
-    },
-  },
-};
+      return `color: ${data.color}; font-size: ${data.fontSize}; padding: ${data.padding}; transform: ${data.transform}`
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">

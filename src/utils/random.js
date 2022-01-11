@@ -10,9 +10,9 @@ export function random(min, max) {
     return Math.floor(
       parseInt(min) +
         Math.random() * (parseInt(max) + parseInt(1) - parseInt(min))
-    );
+    )
   } else {
-    return null;
+    return null
   }
 }
 
