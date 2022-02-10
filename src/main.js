@@ -15,5 +15,5 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
-  render: (h) => h(App)
+  render: (h) => h(App) // render 回调APP放到div里边
 }).$mount('#app')
