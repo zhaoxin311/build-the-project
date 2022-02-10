@@ -164,6 +164,18 @@ export const constantRoutes = [
         component: () => import('../views/tong/index.vue')
       }
     ]
+  },
+  {
+    path: '/Vuejianli',
+    name: 'vue制作会动的简历',
+    icon: 'el-icon-message-solid',
+    component: Layout,
+    children: [
+      {
+        path: '/Vuejianli',
+        component: () => import('../views/Vuejianli/index.vue')
+      }
+    ]
   }
 
   // {
