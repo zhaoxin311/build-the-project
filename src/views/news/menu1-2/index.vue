@@ -11,6 +11,22 @@
     </main>
   </div>
 </template>
+<script>
+import { passwordMd5 } from '@/utils/way'
+
+export default {
+  data() {
+    return {
+      pass: '123456'
+    }
+  },
+  created() {
+    const password = passwordMd5(this.pass)
+    console.log(password, 'pass')
+  }
+
+}
+</script>
 <style scoped lang="scss">
 main {
   margin-top: 20px;
