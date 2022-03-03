@@ -353,6 +353,28 @@ export default {
       star3: 4.5,
       star4: 4.7
     }
+  },
+  // 1 监听浏览器的刷新事件，注册方法
+  mounted() {
+    // 监听浏览器的刷新事件
+    window.addEventListener('beforeunload', this.unload)
+    // window.addEventListener('beforeunload', e => this.unload) // 注册一个匿名函数
+  },
+  // 2 销毁这个监听事件
+  destroyed() {
+    // 销毁这个监听事件，需要找到这个函数，如果使用的是匿名函数的话，无法查找这个函数，这个事件也就没有办法被移除 ，在其他页面仍然会执行这个监听事件
+    window.removeEventListener('beforeunload', this.unload)
+  },
+  // 3.methods添加方法
+  methods: {
+    unload(e) {
+      e = e || window.event
+      if (e) {
+        // 在这里阻止默认的刷新，弹出弹框
+        e.returnValue = '关闭提示'
+      }
+      return '关闭'
+    }
   }
 }
 </script>
