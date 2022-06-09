@@ -650,8 +650,8 @@ export default {
 .image-1{
   width: 200px;
   height: 400px;
-  object-fit: cover;
-  // object-fit: contain;
+  // object-fit: cover;
+  object-fit: contain;
 }
 .image-2{
   width: 200px;
