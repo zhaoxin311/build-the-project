@@ -56,124 +56,136 @@ export const constantRoutes = [
       }
     ]
   },
-  {
-    path: '/yezhuguanli',
-    name: '业主管理',
-    icon: 'el-icon-s-custom',
-    redirect: '/yezhuguanli',
-    component: Layout,
-    hidden: true,
-    children: [
-      {
-        path: '/yezhuguanli',
-        component: () => import('../views/owner/index.vue')
-      }
-    ]
-  },
+  // {
+  //   path: '/yezhuguanli',
+  //   name: '业主管理',
+  //   icon: 'el-icon-s-custom',
+  //   redirect: '/yezhuguanli',
+  //   component: Layout,
+  //   hidden: true,
+  //   children: [
+  //     {
+  //       path: '/yezhuguanli',
+  //       component: () => import('../views/owner/index.vue')
+  //     }
+  //   ]
+  // },
 
+  // {
+  //   path: '/xinwenzixun',
+  //   component: Layout,
+  //   name: '新闻资讯',
+  //   redirect: '/xinwenzixun/menu1-1',
+  //   icon: 'el-icon-s-management',
+  //   // hidden: true,
+  //   children: [
+  //     {
+  //       path: '/xinwenzixun/menu1-1',
+  //       component: () => import('../views/news/menu1-1/index.vue'),
+  //       name: '新闻资讯-1'
+  //       // icon: "el-icon-s-management",
+  //     },
+  //     {
+  //       path: '/xinwenzixun/menu1-2',
+  //       component: () => import('../views/news/menu1-2/index.vue'),
+  //       name: '新闻资讯-2'
+  //       // icon: "el-icon-s-management",
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/shoucangguanli',
+  //   name: '收藏管理',
+  //   icon: 'el-icon-star-on',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: '/shoucangguanli',
+  //       component: () => import('../views/like/index.vue')
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/liebiaoguanli',
+  //   name: '组件通信',
+  //   icon: 'el-icon-s-operation',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: '/liebiaoguanli',
+  //       component: () => import('../views/list/index.vue')
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/gedanguanli',
+  //   name: 'JS测试',
+  //   icon: 'el-icon-message-solid',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: '/gedanguanli',
+  //       component: () => import('../views/music/index.vue')
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/css',
+  //   name: 'CSS经典',
+  //   icon: 'el-icon-message-solid',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: '/css',
+  //       component: () => import('../views/css/index.vue')
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/loading',
+  //   name: 'Loading动画',
+  //   icon: 'el-icon-message-solid',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: '/loading',
+  //       component: () => import('../views/css/loading/index.vue')
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/tong',
+  //   name: '通用样式',
+  //   icon: 'el-icon-message-solid',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: '/tong',
+  //       component: () => import('../views/tong/index.vue')
+  //     }
+  //   ]
+  // },
   {
-    path: '/xinwenzixun',
+    path: '/IShare',
+    name: '周会分享',
+    icon: 'el-icon-share',
     component: Layout,
-    name: '新闻资讯',
-    redirect: '/xinwenzixun/menu1-1',
-    icon: 'el-icon-s-management',
-    // hidden: true,
+    redirect: '/IShare/index.vue',
     children: [
       {
-        path: '/xinwenzixun/menu1-1',
-        component: () => import('../views/news/menu1-1/index.vue'),
-        name: '新闻资讯-1'
-        // icon: "el-icon-s-management",
+        path: '/IShare/index.vue',
+        component: () => import('../pages/IShare/index.vue'),
+        name: '格式一'
       },
       {
-        path: '/xinwenzixun/menu1-2',
-        component: () => import('../views/news/menu1-2/index.vue'),
-        name: '新闻资讯-2'
-        // icon: "el-icon-s-management",
-      }
-    ]
-  },
-  {
-    path: '/shoucangguanli',
-    name: '收藏管理',
-    icon: 'el-icon-star-on',
-    component: Layout,
-    children: [
+        path: '/IShare/zuoyoushangxia.vue',
+        component: () => import('../pages/IShare/zuoyoushangxia.vue'),
+        name: '格式二'
+      },
       {
-        path: '/shoucangguanli',
-        component: () => import('../views/like/index.vue')
-      }
-    ]
-  },
-  {
-    path: '/liebiaoguanli',
-    name: '组件通信',
-    icon: 'el-icon-s-operation',
-    component: Layout,
-    children: [
-      {
-        path: '/liebiaoguanli',
-        component: () => import('../views/list/index.vue')
-      }
-    ]
-  },
-  {
-    path: '/gedanguanli',
-    name: 'JS测试',
-    icon: 'el-icon-message-solid',
-    component: Layout,
-    children: [
-      {
-        path: '/gedanguanli',
-        component: () => import('../views/music/index.vue')
-      }
-    ]
-  },
-  {
-    path: '/css',
-    name: 'CSS经典',
-    icon: 'el-icon-message-solid',
-    component: Layout,
-    children: [
-      {
-        path: '/css',
-        component: () => import('../views/css/index.vue')
-      }
-    ]
-  },
-  {
-    path: '/loading',
-    name: 'Loading动画',
-    icon: 'el-icon-message-solid',
-    component: Layout,
-    children: [
-      {
-        path: '/loading',
-        component: () => import('../views/css/loading/index.vue')
-      }
-    ]
-  },
-  {
-    path: '/tong',
-    name: '通用样式',
-    icon: 'el-icon-message-solid',
-    component: Layout,
-    children: [
-      {
-        path: '/tong',
-        component: () => import('../views/tong/index.vue')
-      }
-    ]
-  },
-  {
-    path: '/Vuejianli',
-    name: 'vue制作会动的简历',
-    icon: 'el-icon-message-solid',
-    component: Layout,
-    children: [
-      {
-        path: '/Vuejianli',
-        component: () => import('../views/Vuejianli/index.vue')
+        path: '/IShare/zuoyoutudong.vue',
+        component: () => import('../pages/IShare/zuoyoutudong.vue'),
+        name: '格式三'
       }
     ]
   }
