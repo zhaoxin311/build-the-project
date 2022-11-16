@@ -180,12 +180,12 @@ export const constantRoutes = [
       {
         path: '/IShare/zuoyoushangxia.vue',
         component: () => import('../pages/IShare/zuoyoushangxia.vue'),
-        name: '格式二'
+        name: '可拖动DIV'
       },
       {
-        path: '/IShare/zuoyoutudong.vue',
-        component: () => import('../pages/IShare/zuoyoutudong.vue'),
-        name: '格式三'
+        path: '/IShare/chooseColumns.vue',
+        component: () => import('../pages/IShare/chooseColumns.vue'),
+        name: '选择列'
       }
     ]
   }

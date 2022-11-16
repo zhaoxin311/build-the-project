@@ -12,24 +12,41 @@
     <!-- 左右三行拖动 -->
     <div class="drag-main">
       <h2>三列的左右拖动改变div大小</h2>
-      <ul id="contentId" class="content">
-        <li id="leftId" class="left">左</li>
-        <li id="resizeOne" class="l-resize" />
-        <li id="centerId" class="center">中</li>
-        <li id="resizeTwo" class="l-resize" />
-        <li id="rightId" class="right">右</li>
-      </ul>
+      <div id="contentId" class="content">
+        <div id="leftId" class="left">左</div>
+        <div id="resizeOne" class="l-resize" />
+        <div id="centerId" class="center">中</div>
+        <div id="resizeTwo" class="l-resize" />
+        <div id="rightId" class="right">右</div>
+      </div>
     </div>
     <!-- 两行上下拖动 -->
     <div class="drag-main">
-      <h2>两行的上下拖动改变div大小</h2>
       <div id="mainId" class="main">
         <div id="topBoxId" class="topBox">
-          中上
+          <h1> 中上</h1>
+          <h1> 中上</h1>
+          <h1> 中上</h1>
+          <h1> 中上</h1>
+          <h1> 中上</h1>
+          <h1> 中上</h1>
+          <h1> 中上</h1>
+          <h1> 中上</h1>
+          <h1> 中上</h1>
+          <h1> 中上</h1>
         </div>
         <div id="resizeId" class="r-resize" />
         <div id="downBoxId" class="downBox">
-          中下
+          <h2>下</h2>
+          <h2>下</h2>
+          <h2>下</h2>
+          <h2>下</h2>
+          <h2>下</h2>
+          <h2>下</h2>
+          <h2>下</h2>
+          <h2>下</h2>
+          <h2>下</h2>
+          <h2>下</h2>
         </div>
       </div>
     </div>
@@ -51,24 +68,28 @@ export default {
 <style lang="scss" scoped>
 /*两列 */
 #twoBox {
+  width: 100%;
   display: flex;
+  position: relative;
 }
 #twoleft {
-  width: calc(20% - 10px);
+  width: 50%;
 }
 #tworesize {
   width: 5px;
   cursor: w-resize;
 }
 #tworight {
-  width: 80%;
+  width: 50%;
 }
 /* 三列 */
 #contentId {
+  width: 100%;
   display: flex;
+  position: relative;
 }
 #leftId {
-  width: calc(20% - 10px);
+  width: 20%;
 }
 #resizeOne {
   width: 5px;
@@ -92,21 +113,28 @@ export default {
   position: relative;
 }
 #topBoxId {
-  height: calc(80% - 5px);
+  height: 50%;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 #resizeId {
   height: 5px;
   cursor: s-resize;
 }
 #downBoxId {
-  height: 20%;
+  height: 50%;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 // 辅助修饰
 .all {
-  padding: 30px;
+  height: 88vh;
+  padding: 20px;
   list-style: none;
 }
 .drag-main{
+  width: 1000px;
+  height: 20%;
   margin-bottom: 30px;
   h2{
     margin-bottom: 30px;
@@ -129,15 +157,10 @@ export default {
   }
 }
 
-ul.content {
+.content {
   // width:100%;
   display: flex;
   overflow: hidden;
-  li {
-    // float: left;
-    height: 100px;
-    list-style-type: none;
-  }
   .left {
     background: red;
   }

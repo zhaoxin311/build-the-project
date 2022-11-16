@@ -5,8 +5,8 @@ export function dragTwoColDiv(contentId, leftBoxId, resizeId, rightBoxId) {
   const rightBox = document.getElementById(rightBoxId)
   const box = document.getElementById(contentId)
   resize.onmousedown = function(e) {
-    const startX = e.clientX
-    resize.left = resize.offsetLeft
+    const startX = e.clientX // 被触发时鼠标指针的水平坐标
+    resize.left = resize.offsetLeft //
     document.onmousemove = function(e) {
       const endX = e.clientX
       let moveLen = resize.left + (endX - startX)
