@@ -5,18 +5,27 @@
     <el-input v-model="address1" placeholder="请输入地址" />
     <el-button type="primary" style="margin-right:20px;">搜索</el-button>
     <DropdownCheck ref="dropdownCheck" :data="dropdownList" :hide-on-click="false" @boolClick="dropdownClick" />
+    <el-button type="info" @click="dialogVisible = true" style="margin-left:20px;">打开弹窗</el-button>
+
     <el-table :data="tableData" stripe style="width: 100%">
       <!-- <el-table-column prop="date" label="日期" width="180" /> -->
       <el-table-column v-if="date" prop="date" label="日期" />
       <el-table-column v-if="name" prop="name" label="姓名" />
       <el-table-column v-if="address" prop="address" label="地址" />
     </el-table>
+
+    <el-dialog v-dialogDrag title="提示" :close-on-click-modal="false" :visible.sync="dialogVisible" width="30%">
+      <span>这是一个可以拖动的弹窗</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 
 </template>
 
 <script>
-
 import DropdownCheck from './DropdownCheck' // 下拉列
 export default {
   components: { DropdownCheck },
@@ -25,6 +34,7 @@ export default {
       date1: '',
       name1: '',
       address1: '',
+      dialogVisible: false,
       tableData: [
         {
           date: '2016-05-02',
@@ -61,7 +71,6 @@ export default {
     }
   },
   methods: {
-
     // 下拉列表
     dropdownClick(newObj) {
       this.dropdownObj = newObj
