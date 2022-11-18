@@ -3,8 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-// 全局引入v-dialogDrag自定义指令
+// 全局引入v-dialogDrag 和 waterMark自定义指令
 import './pages/IShare/directives/dialogDrag'
+import './pages/IShare/directives/waterMark.js'
 
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'

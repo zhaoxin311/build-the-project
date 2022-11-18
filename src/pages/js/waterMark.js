@@ -6,6 +6,8 @@ const watermark = {}
  *
  * @param {要设置的水印的内容} str
  * @param {需要设置水印的容器} container
+ *
+ * 简单原理：canvas绘制水印文字，创建一个顶层div，并将canvas放到上边，js插入水印层div即可。
  */
 const setWatermark = (str, container) => {
   const id = '1.23452384164.123412415'

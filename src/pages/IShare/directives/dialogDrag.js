@@ -32,6 +32,7 @@ Vue.directive('dialogDrag', {
       }
 
       document.onmouseup = function(e) {
+        //  鼠标弹起，移除鼠标移动事件
         document.onmousemove = null
         document.onmouseup = null
       }
