@@ -1,6 +1,7 @@
 
 import Vue from 'vue'
 
+// 自定义水印指令
 Vue.directive('watermark', (el, binding) => {
   function addWaterMarker(str, parentNode, font, textColor) { // 水印文字，父元素，字体，文字颜色
     const img = document.createElement('canvas') // 创建canvas元素
