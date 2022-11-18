@@ -12,7 +12,6 @@
         :value="item.value"
       >
         <el-checkbox v-model="item.bool" class="columnCheckbox">{{ item.label }}</el-checkbox>
-        <!-- <span> {{ item.bool }}</span> -->
       </el-dropdown-item>
     </el-dropdown-menu>
   </el-dropdown>
