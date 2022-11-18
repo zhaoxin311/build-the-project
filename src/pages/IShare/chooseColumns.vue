@@ -14,8 +14,13 @@
       <el-table-column v-if="address" prop="address" label="地址" />
     </el-table>
 
-    <el-dialog v-dialogDrag title="提示" :close-on-click-modal="false" :visible.sync="dialogVisible" width="30%">
-      <span>这是一个可以拖动的弹窗</span>
+    <el-dialog v-dialogDrag title="提示：这是一个可以拖动的弹窗" :close-on-click-modal="false" :visible.sync="dialogVisible" width="50%">
+      <!-- <span>这是一个可以拖动的弹窗</span> -->
+      <el-table :data="tableData" stripe style="width: 100%">
+      <el-table-column v-if="date" prop="date" label="日期" />
+      <el-table-column v-if="name" prop="name" label="姓名" />
+      <el-table-column v-if="address" prop="address" label="地址" />
+    </el-table>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="dialogVisible = false">确 定</el-button>

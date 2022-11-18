@@ -22,6 +22,7 @@
     </div>
     <!-- 两行上下拖动 -->
     <div class="drag-main">
+      <h2>两横的上下拖动改变div大小</h2>
       <div id="mainId" class="main">
         <div id="topBoxId" class="topBox">
           <h1> 中上</h1>
