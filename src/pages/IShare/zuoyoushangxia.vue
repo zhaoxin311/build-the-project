@@ -54,7 +54,7 @@
   </div>
 </template>
 <script>
-import { dragTwoColDiv, dragThreeColDiv, dragTwoRowDiv } from './daxiao'
+import { dragTwoColDiv, dragThreeColDiv, dragTwoRowDiv } from '../js/daxiao'
 export default {
   data() {
     return {}

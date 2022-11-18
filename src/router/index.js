@@ -175,7 +175,7 @@ export const constantRoutes = [
       {
         path: '/IShare/index.vue',
         component: () => import('../pages/IShare/index.vue'),
-        name: '格式一'
+        name: '局部水印'
       },
       {
         path: '/IShare/zuoyoushangxia.vue',
